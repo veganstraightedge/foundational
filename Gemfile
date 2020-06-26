@@ -13,7 +13,7 @@ gem 'pg'
 gem 'puma'
 
 # auth
-gem 'bcrypt'
+gem 'devise'
 
 # assets
 gem 'bootstrap'
