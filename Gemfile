@@ -16,8 +16,8 @@ gem 'puma'
 gem 'devise'
 
 # assets
+gem 'autoprefixer-rails' # for bootstrap
 gem 'bootstrap'
-gem 'jquery-rails' # for bootstrap pages
 gem 'sassc-rails'
 gem 'turbolinks'
 gem 'webpacker'

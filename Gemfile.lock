@@ -271,6 +271,7 @@ PLATFORMS
 
 DEPENDENCIES
   administrate
+  autoprefixer-rails
   bootsnap
   bootstrap
   byebug
@@ -280,7 +281,6 @@ DEPENDENCIES
   i18n-debug
   image_processing
   jbuilder
-  jquery-rails
   kaminari
   listen
   lograge
