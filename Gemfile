@@ -28,11 +28,11 @@ gem 'jbuilder'
 # pagination
 gem 'kaminari'
 
-# admin
-gem 'administrate'
-
 # MISC
 gem 'sterile' # for slugs
+
+# admin
+gem 'administrate'
 
 # observability
 gem 'lograge'
