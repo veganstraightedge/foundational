@@ -17,7 +17,7 @@ gem 'bcrypt'
 
 # assets
 gem 'bootstrap'
-gem 'jquery-rails'      # for bootstrap pages
+gem 'jquery-rails' # for bootstrap pages
 gem 'sassc-rails'
 gem 'webpacker'
 gem 'jbuilder'
@@ -27,6 +27,9 @@ gem 'jbuilder'
 
 # pagination
 gem 'kaminari'
+
+# admin
+gem 'administrate'
 
 # MISC
 gem 'sterile' # for slugs
