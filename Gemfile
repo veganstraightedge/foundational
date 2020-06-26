@@ -19,6 +19,7 @@ gem 'devise'
 gem 'bootstrap'
 gem 'jquery-rails' # for bootstrap pages
 gem 'sassc-rails'
+gem 'turbolinks'
 gem 'webpacker'
 
 # JSON views
