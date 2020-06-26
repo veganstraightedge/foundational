@@ -6,9 +6,8 @@ Rails.application.routes.draw do
   devise_for :users
 
   devise_scope :user do
-    get     'signup',  to: 'devise/registrations#new'
-    get     'signin',  to: 'devise/sessions#new'
-    get     'signout', to: 'devise/sessions#destroy'
-    destroy 'signout', to: 'devise/sessions#destroy'
+    get 'signup',  to: 'devise/registrations#new'
+    get 'signin',  to: 'devise/sessions#new'
+    get 'signout', to: 'devise/sessions#destroy'
   end
 end
