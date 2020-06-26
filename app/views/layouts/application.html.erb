@@ -1,20 +1,26 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>WhenAndWhere</title>
+<%= tag.html lang: setting_for_site_locale do %>
+  <%= tag.head do %>
+    <title><%= setting_for_page_title %></title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+    <%# Meta tags requried for Bootstrap %>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no'>
 
-  <body>
+    <%# Stylesheets %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%# Javascripts, turbolinks needs to be in the <head>, not <body> %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <% end %>
+
+  <%= tag.body do %>
     <%= render 'layouts/nav' %>
-    
+
     <p class='notice'><%= notice %></p>
     <p class='alert'><%= alert %></p>
 
     <%= yield %>
-  </body>
-</html>
+  <% end %>
+<% end %>
