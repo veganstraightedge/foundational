@@ -3,8 +3,8 @@ source 'https://rubygems.org'
 ruby File.read('.ruby-version').chomp
 
 # app server
-gem 'rails'
 gem 'bootsnap', require: false
+gem 'rails'
 
 # database
 gem 'pg'
@@ -44,13 +44,13 @@ gem 'image_processing'
 gem 'dotenv-rails'
 
 group :development, :test do
-  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'i18n-debug'
 end
 
 group :development do
-  gem 'web-console'
   gem 'listen'
+  gem 'web-console'
 end
 
 group :test do
@@ -63,7 +63,7 @@ end
 gem 'rack-attack'
 
 # windows development
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
 group :production do
   # webserver
