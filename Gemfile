@@ -41,6 +41,9 @@ gem 'logstash-event'
 # Active Storage uploads
 gem 'image_processing'
 
+# environment variables
+gem 'dotenv-rails'
+
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'i18n-debug'
