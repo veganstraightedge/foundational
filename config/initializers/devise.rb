@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 # Assuming you have not yet modified this file, each configuration option below
 # is set to its default value. Note that some are commented out while others
 # are not: uncommented lines are intended to protect your configuration from
@@ -14,6 +12,7 @@ Devise.setup do |config|
   # confirmation, reset password and unlock tokens in the database.
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
+  # TODO: read this from an ENV var
   # config.secret_key = 'c219f6e21f91559681da1ffd3f9e54915f3cc30b09c7ba65b9acf83fc58909452f7e37227f39926fb428e1082c552fa0a85a37f665c92dbbcec571754067c2c2'
 
   # ==> Controller configuration
@@ -24,7 +23,7 @@ Devise.setup do |config|
   # Configure the e-mail address which will be shown in Devise::Mailer,
   # note that it will be overwritten if you use your own mailer class
   # with default "from" parameter.
-  config.mailer_sender = 'please-change-me-at-config-initializers-devise@example.com'
+  config.mailer_sender = ENV.fetch('WHEN_AND_WHERE_FROM_EMAIL') { 'from@example.com' }
 
   # Configure the class responsible to send e-mails.
   # config.mailer = 'Devise::Mailer'
@@ -126,13 +125,14 @@ Devise.setup do |config|
   config.stretches = Rails.env.test? ? 1 : 12
 
   # Set up a pepper to generate the hashed password.
+  # TODO: read this from an ENV var
   # config.pepper = '1f001b3a187f9ff081634574cf7499f0f003020ed2aa0a23751e30489b6b08425bcf8eae369fd71c57114bbe1edfeca401e6ce866e3c9118e5e50817093a6a04'
 
   # Send a notification to the original email when the user's email is changed.
-  # config.send_email_changed_notification = false
+  config.send_email_changed_notification = true
 
   # Send a notification email when the user's password is changed.
-  # config.send_password_change_notification = false
+  config.send_password_change_notification = true
 
   # ==> Configuration for :confirmable
   # A period that the user is allowed to access the website even without
@@ -174,11 +174,12 @@ Devise.setup do |config|
 
   # Options to be passed to the created cookie. For instance, you can set
   # secure: true in order to force SSL only cookies.
-  # config.rememberable_options = {}
+  # Default is {}
+  config.rememberable_options = { secure: true }
 
   # ==> Configuration for :validatable
   # Range for password length.
-  config.password_length = 6..128
+  config.password_length = 12..128
 
   # Email regex used to validate email formats. It simply asserts that
   # one (and only one) @ exists in the given string. This is mainly
@@ -188,7 +189,7 @@ Devise.setup do |config|
   # ==> Configuration for :timeoutable
   # The time you want to timeout the user session without activity. After this
   # time the user will be asked for credentials again. Default is 30 minutes.
-  # config.timeout_in = 30.minutes
+  config.timeout_in = 7.days
 
   # ==> Configuration for :lockable
   # Defines which strategy will be used to lock an account.
@@ -207,8 +208,8 @@ Devise.setup do |config|
   # config.unlock_strategy = :both
 
   # Number of authentication tries before locking an account if lock_strategy
-  # is failed attempts.
-  # config.maximum_attempts = 20
+  # is failed attempts. Default is 20
+  config.maximum_attempts = 10
 
   # Time interval to unlock the account if :time is enabled as unlock_strategy.
   # config.unlock_in = 1.hour
