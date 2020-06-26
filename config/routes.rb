@@ -10,4 +10,11 @@ Rails.application.routes.draw do
     get 'signin',  to: 'devise/sessions#new'
     get 'signout', to: 'devise/sessions#destroy'
   end
+
+  # admin
+  namespace :admin do
+    resources :users
+
+    root to: "users#index"
+  end
 end
