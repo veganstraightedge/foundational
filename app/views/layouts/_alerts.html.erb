@@ -1,0 +1,17 @@
+<div class='container'>
+  <% if notice.present? %>
+    <div class='alert alert-info my-5'>
+      <div class='alert-text'>
+        <%= notice %>
+      </div>
+    </div>
+  <% end %>
+
+  <% if alert.present? %>
+    <div class='alert alert-danger my-5'>
+      <div class='alert-text'>
+        <%= alert %>
+      </div>
+    </div>
+  <% end %>
+</div>
