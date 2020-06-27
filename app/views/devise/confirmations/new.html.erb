@@ -6,10 +6,7 @@
     <%= form_for resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post } do |form| %>
       <%= render "devise/shared/error_messages", resource: resource %>
 
-      <div class="form-group">
-        <%= form.label       :email %>
-        <%= form.email_field :email, autofocus: true, autocomplete: "email", class: "form-control form-control-lg" %>
-      </div>
+      <%= render "devise/shared/labeled_email_field", form: form, name: :email %>
 
       <div class="actions">
         <%= form.submit "Resend confirmation instructions →" %>

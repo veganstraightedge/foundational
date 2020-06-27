@@ -7,16 +7,16 @@
       <%= render "devise/shared/error_messages", resource: resource %>
       <%= form.hidden_field :reset_password_token %>
 
-      <div class="form-group">
-        <%= form.label          :password, "New password" %>
-        <%= form.password_field :password, autocomplete: "new-password", class: "form-control form-control-lg" %>
-        <p class="form-text text-muted"><%= @minimum_password_length %> characters minimum</p>
-      </div>
+      <%= render "devise/shared/labeled_password_field",
+                  form: form,
+                  name: :password,
+                  label: "New password",
+                  note: "#{@minimum_password_length} characters minimum" %>
 
-      <div class="form-group">
-        <%= form.label          :password_confirmation, "Confirm new password" %>
-        <%= form.password_field :password_confirmation, autocomplete: "new-password", class: "form-control form-control-lg" %>
-      </div>
+      <%= render "devise/shared/labeled_password_field",
+                  form: form,
+                  name: :password_confirmation,
+                  label: "Confirm new password" %>
 
       <div class="actions">
         <%= form.submit "Save password →" %>
