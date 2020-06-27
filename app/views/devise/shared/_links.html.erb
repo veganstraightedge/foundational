@@ -1,14 +1,14 @@
 <div class="card mt-5 bg-light">
   <div class="card-body">
     <% if controller_name != 'sessions' %>
-      <p>
+      <p class="m-0">
         Already have an account?
         <%= link_to "Sign in here", new_session_path(resource_name) %>.
       </p>
     <% end %>
 
     <% if devise_mapping.registerable? && controller_name != 'registrations' %>
-      <p>
+      <p class="m-0">
         Don’t have an account?
         <%= link_to "Sign up here", new_registration_path(resource_name) %>.
       </p>
