@@ -7,7 +7,7 @@ label {
   @extend .mb-3;
 }
 
-input[type=submit] {
+.actions input[type=submit] {
   @extend .btn;
   @extend .btn-primary;
   @extend .btn-lg;
