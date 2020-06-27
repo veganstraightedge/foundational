@@ -1,17 +1,23 @@
 <div class='container'>
-  <% if notice.present? %>
-    <div class='alert alert-info my-5'>
-      <div class='alert-text'>
-        <%= notice %>
-      </div>
-    </div>
-  <% end %>
+  <%= tag.div class: wrapper_row_classes do %>
+    <%= tag.div class: wrapper_columns_classes do %>
 
-  <% if alert.present? %>
-    <div class='alert alert-danger my-5'>
-      <div class='alert-text'>
-        <%= alert %>
-      </div>
-    </div>
+      <% if notice.present? %>
+        <div class='alert alert-info mb-5'>
+          <div class='alert-text'>
+            <%= notice %>
+          </div>
+        </div>
+      <% end %>
+
+      <% if alert.present? %>
+        <div class='alert alert-danger mb-5'>
+          <div class='alert-text'>
+            <%= alert %>
+          </div>
+        </div>
+      <% end %>
+
+    <% end %>
   <% end %>
-</div>
+</div><!-- .container -->
