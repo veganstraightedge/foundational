@@ -1,9 +1,9 @@
 <nav class="navbar navbar-expand-lg sticky-top navbar-light bg-light mb-5">
   <div class="container">
-    <a class="navbar-brand" href="#">
-      <%= image_tag setting_for_brand_image, width: "30", height: "30", class: "d-inline-block align-top", alt: "", loading: "lazy" %>
+    <%= link_to [:root], class: "navbar-brand" do %>
+      <%= image_tag setting_for_brand_image, width: "30", height: "30", class: "d-inline-block align-top mr-1", loading: "lazy" %>
       <%= setting_for_brand_name %>
-    </a>
+    <% end %>
 
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar_supported_content" aria-controls="navbar_supported_content" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
