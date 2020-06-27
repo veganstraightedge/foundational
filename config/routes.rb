@@ -13,6 +13,7 @@ Rails.application.routes.draw do
 
   # admin
   namespace :admin do
+    resources :settings
     resources :users
 
     root to: "users#index"
