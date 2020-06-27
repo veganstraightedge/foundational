@@ -4,7 +4,9 @@ class CreateSettings < ActiveRecord::Migration[6.0]
       t.string :name
       t.text   :description
       t.text   :content
+      t.text   :default_content
       t.string :form_control
+      t.boolean :update_required, default: false
 
       t.timestamps
     end

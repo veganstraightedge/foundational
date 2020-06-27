@@ -19,7 +19,9 @@ ActiveRecord::Schema.define(version: 2020_06_27_051302) do
     t.string "name"
     t.text "description"
     t.text "content"
+    t.text "default_content"
     t.string "form_control"
+    t.boolean "update_required", default: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
