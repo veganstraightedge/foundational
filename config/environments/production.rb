@@ -58,7 +58,7 @@ Rails.application.configure do
 
   # Use a real queuing backend for Active Job (and separate queues per environment).
   # config.active_job.queue_adapter     = :resque
-  # config.active_job.queue_name_prefix = "when_and_where_production"
+  # config.active_job.queue_name_prefix = "foundational_production"
 
   config.action_mailer.perform_caching = false
 
@@ -68,7 +68,7 @@ Rails.application.configure do
 
   # For Devise
   config.action_mailer.default_url_options = {
-    host: ENV.fetch('WHEN_AND_WHERE_HOST') { 'example.com' }
+    host: ENV.fetch('FOUNDATIONAL_HOST') { 'example.com' }
   }
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
