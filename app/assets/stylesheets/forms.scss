@@ -1,0 +1,14 @@
+label {
+  @extend .font-weight-bold;
+}
+
+.actions {
+  @extend .text-right;
+  @extend .mb-3;
+}
+
+input[type=submit] {
+  @extend .btn;
+  @extend .btn-primary;
+  @extend .btn-lg;
+}
