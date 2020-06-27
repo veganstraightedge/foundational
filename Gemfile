@@ -38,7 +38,10 @@ gem 'administrate'
 gem 'lograge'
 gem 'logstash-event'
 
-# Active Storage uploads
+# uploads using Active Storage
+gem 'aws-sdk-s3',           require: false
+gem 'azure-storage',        require: false
+gem 'google-cloud-storage', require: false
 gem 'image_processing'
 
 # environment variables
