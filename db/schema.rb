@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(version: 2020_06_28_075216) do
 
   create_table "settings", force: :cascade do |t|
     t.string "name"
+    t.string "slug"
     t.string "group"
     t.text "description"
     t.text "content"

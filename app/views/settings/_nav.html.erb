@@ -1,21 +1,23 @@
 <nav>
-  <ul class='list-unstyled'>
-    <li class='h6 font-weight-bold'>
-      <%= link_to 'All Settings', [:settings] %>
-    </li>
+  <div class='h6 font-weight-bold list-group mb-3'>
+    <%= link_to 'All Settings', [:settings], class: 'list-group-item list-group-item-action' %>
+  </div>
 
-    <li>
-      <% grouped_settings.each do |group, settings| %>
-        <ul class='list-unstyled'>
-          <li class='h6 font-weight-bold mt-3 mb-1'><%= group %></li>
+  <% grouped_settings.each do |group, settings| %>
+    <div class='list-group mb-3'>
+      <p class='font-weight-bold list-group-item m-0'><%= group %></p>
 
-          <% settings.each do |setting| %>
-            <li class='d-inline d-md-block'>
-              <%= link_to setting.name, [:edit, setting], class: 'mr-2' %>
-            </li>
+      <% settings.each do |setting| %>
+        <%= link_to [:edit, setting], class: 'list-group-item list-group-item-action' do %>
+          <%= setting.name %>
+
+          <% if setting.requires_update? %>
+            <br>
+            <span class="badge badge-danger badge-pill">Update Required</span>
           <% end %>
-        </ul>
+        <% end %>
       <% end %>
-    </li>
-  </ul>
+
+    </div>
+  <% end %>
 </nav>

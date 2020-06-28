@@ -4,26 +4,34 @@ class Setting < ApplicationRecord
 
   has_one_attached :image
 
-  before_save :downcase_name
   before_save :strip_name_blankspace
+  before_save :generate_slug
 
   class << self
     def for name
-      Setting.find_by(name: name.downcase)
+      Setting.find_by(slug: name.downcase)
     end
+
+    def requiring_update
+      where(update_required: true).select(&:requires_update?)
+    end
+  end
+
+  def requires_update?
+    update_required == true && content == default_content
   end
 
   private
 
-  def number_setting?
-    self.form_control == 'number_field'
-  end
-
-  def downcase_name
-    self.name = self.name.downcase
-  end
-
   def strip_name_blankspace
     self.name = self.name.strip
+  end
+
+  def generate_slug
+    self.slug = self.name.downcase
+  end
+
+  def number_setting?
+    self.form_control == 'number_field'
   end
 end

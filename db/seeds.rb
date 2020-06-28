@@ -14,7 +14,7 @@ end
 puts '==> Creating required Settings with default content…'
 
 # Localization
-Setting.create! name:            'Default locale',
+Setting.create! name:            'Default Locale',
                 group:           'Localization',
                 description:     'What locale (language + optional dialect / region) will your website
                                   be used in primarily? For example: “en” for English (no dialect),
@@ -32,7 +32,7 @@ Setting.create! name:            'Host',
                 update_required: true,
                 form_control:    'text_field'
 
-Setting.create! name:            'FROM email address',
+Setting.create! name:            'FROM Email Address',
                 group:           'Authentication',
                 description:     'What address will your site send emails FROM,
                                   such as the password reset email?'.squish,
@@ -41,7 +41,7 @@ Setting.create! name:            'FROM email address',
                 update_required: true,
                 form_control:    'email_field'
 
-Setting.create! name:            'Minimum password length',
+Setting.create! name:            'Minimum Password Length',
                 group:           'Authentication',
                 description:     'How long does a user’s password have to be?',
                 content:         ENV.fetch('FOUNDATIONAL_PASSWORD_MINIMUM') { 12 },
@@ -49,7 +49,7 @@ Setting.create! name:            'Minimum password length',
                 form_control:    'number_field'
 
 # Brand
-Setting.create! name:            'Website name',
+Setting.create! name:            'Website Name',
                 group:           'Branding',
                 description:     'What text will display in the header nav bar?
                                   It will link to the homepage.'.squish,
@@ -58,7 +58,7 @@ Setting.create! name:            'Website name',
                 update_required: true,
                 form_control:    'text_field'
 
-Setting.create! name:            'Website image',
+Setting.create! name:            'Website Header Image',
                 group:           'Branding',
                 description:     'What image will display in the header nav bar next
                                   to the Website Name? A square image is recommended.'.squish,
