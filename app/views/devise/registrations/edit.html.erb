@@ -2,7 +2,7 @@
   <%= tag.div class: wrapper_row_classes do %>
     <%= tag.div class: wrapper_columns_classes do %>
 
-    <h2 class="display-3">Edit <%= resource_name.to_s.humanize %></h2>
+    <h2 class="display-3">Account Settings</h2>
 
     <%= form_for resource, as: resource_name, url: registration_path(resource_name), html: { method: :put } do |form| %>
       <%= render "devise/shared/error_messages", resource: resource %>

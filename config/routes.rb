@@ -10,7 +10,7 @@ Rails.application.routes.draw do
     get 'signin',  to: 'devise/sessions#new'
     get 'signout', to: 'devise/sessions#destroy'
 
-    get 'settings', to: 'devise/registrations#edit'
+    get 'account', to: 'devise/registrations#edit'
   end
 
   # admin
