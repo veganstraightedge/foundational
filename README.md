@@ -2,9 +2,7 @@
 
 ## TODO
 
-- [ ] Move ENV vars to Settings table
-  - [ ] Read Settings from Devise etc initializers
-  - [ ] Settings UI for ENV vars
+- [ ] Settings UI for ENV vars (using Setting#form_control to load the right partial)
 
 - [ ] Categories
 - [ ] Tags

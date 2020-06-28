@@ -12,24 +12,28 @@ end
 
 # Settings
 puts '==> Creating required Settings with default content…'
-Setting.create! name:            'Host name',
+
+# Localization
+Setting.create! name:            'Default locale',
+                description:     'What locale (language + optional dialect / region) your website be
+                                  used in primarily? For example: “en” for English (no dialect),
+                                  “pt-br” for Brazilian Portuguese, “it” for Italian, etc.'.squish,
+                content:         ENV.fetch('FOUNDATIONAL_LOCALE') { 'en' },
+                default_content: 'en',
+                form_control:    'text_field'
+
+# Devise
+Setting.create! name:            'Host',
                 description:     'What domain will you use for your website? For example: example.com.',
                 content:         ENV.fetch('FOUNDATIONAL_HOST') { 'example.com' },
                 default_content: 'example.com',
                 update_required: true,
                 form_control:    'text_field'
 
-Setting.create! name:           'Default locale',
-                description:    'What locale (language + optional dialect / region) your website be used in primarily?
-                                 For example: “en” for English (no dialect), “pt-br” for Brazilian Portuguese,
-                                 “it” for Italian, etc.'.squish,
-                content:         ENV.fetch('FOUNDATIONAL_LOCALE') { 'en' },
-                default_content: 'en',
-                form_control:    'text_field'
-
 Setting.create! name:            'FROM email address',
-                description:     'What address will your site send emails FROM? For example, the password reset email.',
-                content:         ENV.fetch('FOUNDATIONAL_FROM_EMAIL') { 'from@example.com' },
+                description:     'What address will your site send emails FROM? For example,
+                                  the password reset email.'.squish,
+                content:         ENV.fetch('FOUNDATIONAL_FROM_EMAIL') { 'todo@example.com' },
                 default_content: 'from@example.com',
                 update_required: true,
                 form_control:    'email_field'
@@ -39,5 +43,21 @@ Setting.create! name:            'Minimum password length',
                 content:         ENV.fetch('FOUNDATIONAL_PASSWORD_MINIMUM') { 12 },
                 default_content: 12,
                 form_control:    'number_field'
+
+# Brand
+Setting.create! name:            'Website name',
+                description:     'What text will display in the header nav bar?
+                                  It will be linked to the homepage.'.squish,
+                content:         ENV.fetch('FOUNDATIONAL_WEBSITE_NAME') { 'TODO' },
+                default_content: 'TODO',
+                update_required: true,
+                form_control:    'text_field'
+
+Setting.create! name:            'Website image',
+                description:     'What image will display in the header nav bar next
+                                  to the Website name?'.squish,
+                content:         ENV.fetch('FOUNDATIONAL_WEBSITE_IMAGE') { nil },
+                default_content: nil,
+                form_control:    'image_field'
 
 puts '==> Seeding… complete.'

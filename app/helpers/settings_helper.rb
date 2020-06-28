@@ -1,20 +1,14 @@
 module SettingsHelper
   def setting_for_site_locale
-    # TEMP: placeholder
-    # TODO: roll into a Setting, with this as the fallback
-    'en'
+    Setting.for("default locale").content.html_safe
   end
 
   def setting_for_page_title
-    # TEMP: placeholder
-    # TODO: roll into a Setting, with this as the fallback
-    'When &amp; Where'.html_safe
+    Setting.for("website name").content.html_safe
   end
 
   def setting_for_brand_name
-    # TEMP: placeholder
-    # TODO: roll into a Setting, with this as the fallback
-    'When &amp; Where'.html_safe
+    Setting.for("website name").content.html_safe
   end
 
   def setting_for_brand_image

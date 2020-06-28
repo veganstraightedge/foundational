@@ -68,7 +68,7 @@ Rails.application.configure do
 
   # For Devise
   config.action_mailer.default_url_options = {
-    host: ENV.fetch('FOUNDATIONAL_HOST') { 'example.com' }
+    host: Setting.for('host').content
   }
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
