@@ -1,8 +1,8 @@
 class SettingsController < ApplicationController
   before_action :authenticate_user!
   # TODO add admin user role check
-  before_action :set_grouped_settings, only: %i[index edit]
-  before_action :set_setting,          only: %i[edit update]
+  before_action :set_grouped_settings
+  before_action :set_setting, only: %i[edit update]
 
   def index
   end
@@ -37,6 +37,6 @@ class SettingsController < ApplicationController
   end
 
   def setting_params
-    params.require(:setting).permit(:content)
+    params.require(:setting).permit(:content, :image)
   end
 end

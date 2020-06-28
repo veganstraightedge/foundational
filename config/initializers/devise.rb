@@ -23,12 +23,7 @@ Devise.setup do |config|
   # Configure the e-mail address which will be shown in Devise::Mailer,
   # note that it will be overwritten if you use your own mailer class
   # with default "from" parameter.
-  config.mailer_sender =
-    if ActiveRecord::Base.connection.table_exists? 'settings'
-      Setting.for("FROM email address").content
-    else
-      "TODO@example.com"
-    end
+  config.mailer_sender = ENV.fetch('FOUNDATIONAL_FROM_EMAIL') { 'TODO@example.com' }
 
   # Configure the class responsible to send e-mails.
   # config.mailer = 'Devise::Mailer'
@@ -184,12 +179,7 @@ Devise.setup do |config|
 
   # ==> Configuration for :validatable
   # Range for password length.
-  minimum_password_length =
-    if ActiveRecord::Base.connection.table_exists? 'settings'
-      Setting.for("minimum password length").content
-    else
-      12
-    end
+  minimum_password_length = ENV.fetch('FOUNDATIONAL_PASSWORD_MINIMUM') { 12 }
   config.password_length  = Integer(minimum_password_length)..128
 
   # Email regex used to validate email formats. It simply asserts that

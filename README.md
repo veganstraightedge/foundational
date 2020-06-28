@@ -2,11 +2,11 @@
 
 ## TODO
 
-- [-] Settings UI for ENV vars (using Setting#form_control to load the right partial)
-
 - [ ] Categories
 - [ ] Tags
 - [ ] User Roles
+
+- [ ] Extract secret_key_base into an ENV var
 
 - [ ] Compare Metabase deploy flow
 - [ ] Explore GET form as custom Deploy button builder

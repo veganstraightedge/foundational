@@ -61,7 +61,7 @@ Setting.create! name:            'Website name',
 Setting.create! name:            'Website image',
                 group:           'Branding',
                 description:     'What image will display in the header nav bar next
-                                  to the Website name?'.squish,
+                                  to the Website Name? A square image is recommended.'.squish,
                 content:         ENV.fetch('FOUNDATIONAL_WEBSITE_IMAGE') { nil },
                 default_content: nil,
                 form_control:    'image_field'

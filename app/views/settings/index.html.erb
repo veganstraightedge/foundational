@@ -15,7 +15,12 @@
             <li class='pb-3'>
               <b><%= setting.name %></b>
               <p><%= setting.description %></p>
-              <p><code class='h5 font-weight-bold'><%= setting.content %></code></p>
+
+              <% if setting.form_control == 'image_field' %>
+                <%= render 'settings/form_controls/attached_image_preview', setting: setting %>
+              <% else %>
+                <p><code class='h5 font-weight-bold'><%= setting.content %></code></p>
+              <% end %>
             </li>
           <% end %>
         </ul>
