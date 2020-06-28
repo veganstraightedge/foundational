@@ -16,6 +16,7 @@
   - [ ] First user on /signup
   - [ ] Redirect all requests until first user
   - [ ] Alert banners until all Settings are configured
+  - [ ] Instruct user to update ENV vars for some Settings, update the Setting from ENV on each settings#index request until they don't require update
   - [ ] Prevent public access until required Settings are configured
 
 - [ ] Themes (CSS blobs) (all site or subset of pages, load order?) (export function (One big CSS file?))
