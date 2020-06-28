@@ -12,6 +12,11 @@
 - [ ] Explore GET form as custom Deploy button builder
   - [ ] In GitHub README Markdown
 
+- [ ] Sendgrid/etc settings
+  - [ ] Support N email senders
+  - [ ] Add Settings for SENDGRID_PASSWORD, SENDGRID_USERNAME, SMTP_PASSWORD, SMTP_USERNAME, kind of vars
+  - [ ] Hookup mailer
+
 - [ ] Blank slate experience:
   - [ ] First user on /signup
   - [ ] Redirect all requests until first user
@@ -22,6 +27,7 @@
 - [ ] Themes (CSS blobs) (all site or subset of pages, load order?) (export function (One big CSS file?))
 
 - [ ] Setup Action Text
+- [ ] Setup Active Job for emails and uploads (sidekiq)
 
 ## Deploy to Heroku
 
