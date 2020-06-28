@@ -1,7 +1,7 @@
 class Setting < ApplicationRecord
   validates :name, uniqueness: true
 
-  has_one_attached :image
+  # has_one_attached :image
 
   before_save :downcase_name
   before_save :strip_name_blankspace

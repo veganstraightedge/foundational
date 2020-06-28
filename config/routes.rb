@@ -20,4 +20,7 @@ Rails.application.routes.draw do
 
     root to: "users#index"
   end
+
+  # admin site settings
+  resources :settings, only: %i[index edit update]
 end

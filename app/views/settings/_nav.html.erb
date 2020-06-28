@@ -1,0 +1,21 @@
+<nav>
+  <ul class='list-unstyled'>
+    <li class='h6 font-weight-bold'>
+      <%= link_to 'All Settings', [:settings] %>
+    </li>
+
+    <li>
+      <% grouped_settings.each do |group, settings| %>
+        <ul class='list-unstyled'>
+          <li class='h6 font-weight-bold mt-3 mb-1'><%= group %></li>
+
+          <% settings.each do |setting| %>
+            <li class='d-inline d-md-block'>
+              <%= link_to setting.name, [:edit, setting], class: 'mr-2' %>
+            </li>
+          <% end %>
+        </ul>
+      <% end %>
+    </li>
+  </ul>
+</nav>

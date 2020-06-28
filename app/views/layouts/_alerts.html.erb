@@ -5,7 +5,7 @@
       <% if notice.present? %>
         <div class='alert alert-info mb-5'>
           <div class='alert-text'>
-            <%= notice %>
+            <%= notice.html_safe %>
           </div>
         </div>
       <% end %>
@@ -13,7 +13,7 @@
       <% if alert.present? %>
         <div class='alert alert-danger mb-5'>
           <div class='alert-text'>
-            <%= alert %>
+            <%= alert.html_safe %>
           </div>
         </div>
       <% end %>

@@ -2,7 +2,7 @@
 
 ## TODO
 
-- [ ] Settings UI for ENV vars (using Setting#form_control to load the right partial)
+- [-] Settings UI for ENV vars (using Setting#form_control to load the right partial)
 
 - [ ] Categories
 - [ ] Tags

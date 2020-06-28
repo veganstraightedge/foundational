@@ -10,6 +10,7 @@ class SettingDashboard < Administrate::BaseDashboard
   ATTRIBUTE_TYPES = {
     id: Field::Number,
     name: Field::String,
+    group: Field::String,
     description: Field::Text,
     content: Field::Text,
     form_control: Field::String,
@@ -25,6 +26,7 @@ class SettingDashboard < Administrate::BaseDashboard
   COLLECTION_ATTRIBUTES = %i[
   id
   name
+  group
   description
   content
   ].freeze
@@ -34,6 +36,7 @@ class SettingDashboard < Administrate::BaseDashboard
   SHOW_PAGE_ATTRIBUTES = %i[
   id
   name
+  group
   description
   content
   form_control
@@ -46,6 +49,7 @@ class SettingDashboard < Administrate::BaseDashboard
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = %i[
   name
+  group
   description
   content
   form_control
