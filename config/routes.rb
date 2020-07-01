@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   # homepage
-  root to: "home#index"
+  root to: 'home#index'
 
   # auth
   devise_for :users
@@ -17,8 +17,12 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :settings
     resources :users
+    resources :tags
+    resources :taggings
+    resources :categories
+    resources :categorizations
 
-    root to: "users#index"
+    root to: 'users#index'
   end
 
   # admin site settings
