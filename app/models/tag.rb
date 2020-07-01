@@ -7,6 +7,10 @@ class Tag < ApplicationRecord
   validates :name, presence: true, uniqueness: { case_sensitive: false }
   validates :slug, uniqueness: true
 
+  def to_param
+    slug
+  end
+
   private
 
   def remove_extra_spaces
