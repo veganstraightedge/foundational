@@ -2,11 +2,11 @@
 
 ## TODO
 
-- [ ] Categories
-- [ ] Tags
+- [ ] Improve Categories <> Categorizations in /admin
+- [ ] Improve Tags <> Taggings in /admin
 - [ ] User Roles
 
-- [ ] Extract secret_key_base into an ENV var
+- [ ] Extract secret_key_base into an ENV var (using app.json?)
 
 - [ ] Compare Metabase deploy flow
 - [ ] Explore GET form as custom Deploy button builder
@@ -15,7 +15,8 @@
 - [ ] Sendgrid/etc settings
   - [ ] Support N email senders
   - [ ] Add Settings for SENDGRID_PASSWORD, SENDGRID_USERNAME, SMTP_PASSWORD, SMTP_USERNAME, kind of vars
-  - [ ] Hookup mailer
+  - [ ] Hookup mailers
+  - [ ] Add Sendgrid addon for emails
 
 - [ ] Blank slate experience:
   - [ ] First user on /signup
@@ -27,7 +28,23 @@
 - [ ] Themes (CSS blobs) (all site or subset of pages, load order?) (export function (One big CSS file?))
 
 - [ ] Setup Action Text
+
 - [ ] Setup Active Job for emails and uploads (sidekiq)
+  - [ ] Redis gem
+  - [ ] Redis addon
+  - [ ] Add Bucketeer addon for uploads
+
+
+## Usage
+
+1. Fork
+2. Add domain models, relationships, UI
+3. Add tags/categories to domain models
+4. Add domain models to /admin
+5. Deploy
+6. Set ENV vars
+7. Config /settings
+8. Setup DNS
 
 ## Deploy to Heroku
 
