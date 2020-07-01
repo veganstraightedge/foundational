@@ -8,7 +8,12 @@
 
 - [ ] Extract secret_key_base into an ENV var (using app.json?)
 
-- [ ] Compare Metabase deploy flow
+- [ ] Can Rails app write to ENV vars
+  - [ ] AND persist those values across deploys
+  - [ ] If so, /settings can update ENV vars
+  - [ ] If not, write docs for how to set via browser and CLI
+
+- [ ] Compare Metabase deploy flow (for When & Where Heroku deploys, not Foundational)
 - [ ] Explore GET form as custom Deploy button builder
   - [ ] In GitHub README Markdown
 
