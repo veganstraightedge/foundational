@@ -3,7 +3,8 @@ Rails.application.routes.draw do
   root to: 'home#index'
 
   # main resources
-  resources :tags, only: %i[index show]
+  resources :categories, only: %i[index show]
+  resources :tags,       only: %i[index show]
 
   # auth
   devise_for :users

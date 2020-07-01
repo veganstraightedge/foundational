@@ -8,7 +8,7 @@ class Category < ApplicationRecord
   validates :slug, uniqueness: true
 
   def to_param
-    [id, slug].join '-'
+    slug
   end
 
   private
