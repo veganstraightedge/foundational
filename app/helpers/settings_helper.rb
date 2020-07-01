@@ -4,7 +4,10 @@ module SettingsHelper
   end
 
   def setting_for_page_title
-    Setting.for("website name").content.html_safe
+    [
+      Setting.for("website name").content.html_safe,
+      @page_title
+    ].join ' : '
   end
 
   def setting_for_brand_name

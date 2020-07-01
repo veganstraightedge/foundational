@@ -2,6 +2,9 @@ Rails.application.routes.draw do
   # homepage
   root to: 'home#index'
 
+  # main resources
+  resources :tags, only: %i[index show]
+
   # auth
   devise_for :users
 
