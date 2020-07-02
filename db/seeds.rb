@@ -79,24 +79,24 @@ Setting.create! name:            'Invite Only',
                 group:           'Authentication',
                 description:     'Is this site invite only? Invite only will disable public signups at `/signup`.
                                   An admin user will have to send invitations to add new users.',
-                content:         ENV.fetch('FOUNDATIONAL_INVITE_ONLY') { false },
-                default_content: false,
+                content:         ENV.fetch('FOUNDATIONAL_INVITE_ONLY') { 'false' },
+                default_content: 'false',
                 form_control:    'radio_button'
 
 Setting.create! name:            'Usernames',
                 group:           'Profiles',
                 description:     'Do you want users to have usernames?
                                   If not, they’ll only need to enter an email address when signing up.',
-                content:         ENV.fetch('FOUNDATIONAL_USERNAMES') { true },
-                default_content: false,
+                content:         ENV.fetch('FOUNDATIONAL_USERNAMES') { 'true' },
+                default_content: 'true',
                 form_control:    'radio_button'
 
 Setting.create! name:            'Profile Pages',
                 group:           'Profiles',
                 description:     'Do you want users to have profile pages with all of their contributions on them?
                                   They would be at a URL like `/@username`.',
-                content:         ENV.fetch('FOUNDATIONAL_PROFILE_PAGES') { false },
-                default_content: false,
+                content:         ENV.fetch('FOUNDATIONAL_PROFILE_PAGES') { 'false' },
+                default_content: 'false',
                 form_control:    'radio_button'
 
 Setting.create! name:            'Public Profile Pages',
@@ -104,8 +104,8 @@ Setting.create! name:            'Public Profile Pages',
                 description:     'Do you want users’ profile pages to be visible to people who are not signed in?
                                   If not, they’ll still be visible to other signed in users.
                                   This setting doesn’t apply if the **Profile Pages** setting is set to `false`.',
-                content:         ENV.fetch('FOUNDATIONAL_PUBLIC_PROFILE_PAGES') { false },
-                default_content: false,
+                content:         ENV.fetch('FOUNDATIONAL_PUBLIC_PROFILE_PAGES') { 'false' },
+                default_content: 'false',
                 form_control:    'radio_button'
 
 # Brand
