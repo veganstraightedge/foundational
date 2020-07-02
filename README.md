@@ -7,8 +7,6 @@
 
 - [ ] Extract secret_key_base into an ENV var (using app.json?)
 
-- [ ] Add render_markdown for alerts and setting descriptions
-
 - [ ] Can Rails app write to ENV vars
   - [ ] AND persist those values across deploys
   - [ ] If so, /settings can update ENV vars
