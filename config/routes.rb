@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
+  get 'users/show'
   # homepage
   root to: 'home#index'
 
   # main resources
+  get '@:username', to: 'users#show'
+
   resources :categories, only: %i[index show]
   resources :tags,       only: %i[index show]
 
