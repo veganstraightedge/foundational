@@ -8,7 +8,7 @@ class Ability
       can :manage, Category
       can :manage, Tag
       can :update, User
-    else user.has_role? :contributor
+    else
       can :read,  Category
       can :write, Tag
     end
