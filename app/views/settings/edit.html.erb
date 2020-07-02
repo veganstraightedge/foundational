@@ -11,7 +11,10 @@
     <div class='col-12 col-md-7 col-lg-9'>
       <small class="h6 text-uppercase text-muted"><%= @setting.group %></small>
       <h3><%= @setting.name %></h3>
-      <p class='h5 font-weight-normal mb-3'><%= @setting.description %></p>
+
+      <div class='h5 font-weight-normal mb-3'>
+        <%= Markdown.render(@setting.description).html_safe %>
+      </div>
 
       <%= form_with model: @setting, local: true do |form| %>
         <div class='form-group'>

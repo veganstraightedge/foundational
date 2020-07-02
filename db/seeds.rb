@@ -44,8 +44,8 @@ puts '==> Creating required Settings with default content…'
 Setting.create! name:            'Default Locale',
                 group:           'Localization',
                 description:     'What locale (language + optional dialect / region) will your website
-                                  be used in primarily? For example: “en” for English (no dialect),
-                                  “pt-br” for Brazilian Portuguese, “it” for Italian, etc.'.squish,
+                                  be used in primarily? For example: `en` for English (no dialect),
+                                  `pt-br` for Brazilian Portuguese, `it` for Italian, etc.'.squish,
                 content:         ENV.fetch('FOUNDATIONAL_LOCALE') { 'en' },
                 default_content: 'en',
                 form_control:    'text_field'

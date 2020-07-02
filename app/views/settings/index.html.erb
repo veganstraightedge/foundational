@@ -14,7 +14,7 @@
           <% settings.each do |setting| %>
             <li class='pb-3'>
               <b><%= setting.name %></b>
-              <p><%= setting.description %></p>
+              <%= Markdown.render(setting.description).html_safe %>
 
               <% if setting.form_control == 'image_field' %>
                 <%= render 'settings/form_controls/attached_image_preview', setting: setting %>
