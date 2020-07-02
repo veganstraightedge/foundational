@@ -6,6 +6,7 @@
 - [ ] Improve Categories <> Categorizations in /admin
 - [ ] Improve Tags <> Taggings in /admin
 - [ ] Add `Current.user` wrapper for Devise's `current_user`
+- [ ] Add user names with /@username routes
 
 - [ ] Extract secret_key_base into an ENV var (using app.json?)
 
