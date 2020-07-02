@@ -24,11 +24,13 @@
 
     "DISABLE_SPRING": "true",
     "MIN_THREADS": "1",
-    "MAX_THREADS": "1"
+    "MAX_THREADS": "1",
+    "REDIS_PROVIDER": "REDIS_URL"
   },
 
   "addons": [
-    "heroku-postgresql:hobby-dev"
+    "heroku-postgresql:hobby-dev",
+    "heroku-redis:hobby-dev"
   ],
 
   "stack": "heroku-18",

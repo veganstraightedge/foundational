@@ -35,8 +35,6 @@
 - [ ] Setup Action Text
 
 - [ ] Setup Active Job for emails and uploads (sidekiq)
-  - [ ] Redis gem
-  - [ ] Redis addon
   - [ ] Add Bucketeer addon for uploads
 
 
