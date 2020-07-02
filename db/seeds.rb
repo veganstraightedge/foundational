@@ -8,6 +8,9 @@ if Rails.env.development?
 
   # Confirm admin user email
   admin_user.update confirmed_at: Time.current, remember_created_at: Time.current
+
+  # Add the admin role to the admin user
+  admin_user.add_role :admin
 end
 
 # Settings
