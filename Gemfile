@@ -30,8 +30,9 @@ gem 'jbuilder'
 # pagination
 gem 'kaminari'
 
-# MISC
-gem 'sterile' # for slugs
+# text utilities
+gem 'kramdown' # for markdown
+gem 'sterile'  # for slugs
 
 # admin
 gem 'administrate'

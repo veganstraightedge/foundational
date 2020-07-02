@@ -44,8 +44,8 @@ puts '==> Creating required Settings with default content…'
 Setting.create! name:            'Default Locale',
                 group:           'Localization',
                 description:     'What locale (language + optional dialect / region) will your website
-                                  be used in primarily? For example: “en” for English (no dialect),
-                                  “pt-br” for Brazilian Portuguese, “it” for Italian, etc.'.squish,
+                                  be used in primarily? For example: `en` for English (no dialect),
+                                  `pt-br` for Brazilian Portuguese, `it` for Italian, etc.'.squish,
                 content:         ENV.fetch('FOUNDATIONAL_LOCALE') { 'en' },
                 default_content: 'en',
                 form_control:    'text_field'
@@ -53,7 +53,7 @@ Setting.create! name:            'Default Locale',
 # Devise
 Setting.create! name:            'Host',
                 group:           'Authentication',
-                description:     'What domain will you use for your website? For example: example.com.',
+                description:     'What domain will you use for your website? For example: `example.com`.',
                 content:         ENV.fetch('FOUNDATIONAL_HOST') { 'example.com' },
                 default_content: 'example.com',
                 update_required: true,
@@ -61,7 +61,7 @@ Setting.create! name:            'Host',
 
 Setting.create! name:            'FROM Email Address',
                 group:           'Authentication',
-                description:     'What address will your site send emails FROM,
+                description:     'What address will your site send emails _FROM_,
                                   such as the password reset email?'.squish,
                 content:         ENV.fetch('FOUNDATIONAL_FROM_EMAIL') { 'from@example.com' },
                 default_content: 'from@example.com',
@@ -74,6 +74,39 @@ Setting.create! name:            'Minimum Password Length',
                 content:         ENV.fetch('FOUNDATIONAL_PASSWORD_MINIMUM') { 12 },
                 default_content: 12,
                 form_control:    'number_field'
+
+Setting.create! name:            'Invite Only',
+                group:           'Authentication',
+                description:     'Is this site invite only? Invite only will disable public signups at `/signup`.
+                                  An admin user will have to send invitations to add new users.',
+                content:         ENV.fetch('FOUNDATIONAL_INVITE_ONLY') { 'false' },
+                default_content: 'false',
+                form_control:    'radio_button'
+
+Setting.create! name:            'Usernames',
+                group:           'Profiles',
+                description:     'Do you want users to have usernames?
+                                  If not, they’ll only need to enter an email address when signing up.',
+                content:         ENV.fetch('FOUNDATIONAL_USERNAMES') { 'true' },
+                default_content: 'true',
+                form_control:    'radio_button'
+
+Setting.create! name:            'Profile Pages',
+                group:           'Profiles',
+                description:     'Do you want users to have profile pages with all of their contributions on them?
+                                  They would be at a URL like `/@username`.',
+                content:         ENV.fetch('FOUNDATIONAL_PROFILE_PAGES') { 'false' },
+                default_content: 'false',
+                form_control:    'radio_button'
+
+Setting.create! name:            'Public Profile Pages',
+                group:           'Profiles',
+                description:     'Do you want users’ profile pages to be visible to people who are not signed in?
+                                  If not, they’ll still be visible to other signed in users.
+                                  This setting doesn’t apply if the **Profile Pages** setting is set to `false`.',
+                content:         ENV.fetch('FOUNDATIONAL_PUBLIC_PROFILE_PAGES') { 'false' },
+                default_content: 'false',
+                form_control:    'radio_button'
 
 # Brand
 Setting.create! name:            'Website Name',

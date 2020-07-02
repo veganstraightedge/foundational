@@ -7,7 +7,8 @@
     <%= form_for resource, as: resource_name, url: session_path(resource_name) do |form| %>
       <%= render "devise/shared/labeled_email_field",
                  form: form,
-                 name: :email %>
+                 name: :email,
+                 autofocus: true %>
 
       <%= render "devise/shared/labeled_password_field",
                  form: form,

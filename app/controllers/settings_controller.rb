@@ -5,9 +5,11 @@ class SettingsController < ApplicationController
   before_action :set_setting, only: %i[edit update]
 
   def index
+    @page_title = ['Site Settings']
   end
 
   def edit
+    @page_title = ['Site Settings', 'Edit', @setting.name]
   end
 
   def update
@@ -15,9 +17,9 @@ class SettingsController < ApplicationController
 
     if @setting.update(setting_params)
       notice =  []
-      notice << "Setting <b>“#{@setting.name}”</b> was successfully updated"
-      notice << "from <b>“#{previous_content}”</b>"
-      notice << "to   <b>“#{@setting.content}”</b>."
+      notice << "Setting **“#{@setting.name}”** was successfully updated"
+      notice << "from **“#{previous_content}”**"
+      notice << "to   **“#{@setting.content}”**."
       notice =  notice.join(' ')
 
       redirect_to [:settings], notice: notice
@@ -33,7 +35,7 @@ class SettingsController < ApplicationController
   end
 
   def set_grouped_settings
-    @grouped_settings = Setting.all.group_by(&:group)
+    @grouped_settings = Setting.order(group: :asc).group_by(&:group)
   end
 
   def setting_params
