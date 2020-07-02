@@ -5,8 +5,6 @@
 - [ ] Improve Categories <> Categorizations in /admin
 - [ ] Improve Tags <> Taggings in /admin
 
-- [ ] Add user names with /@username routes
-
 - [ ] Extract secret_key_base into an ENV var (using app.json?)
 
 - [ ] Can Rails app write to ENV vars
