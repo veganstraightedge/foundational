@@ -5,8 +5,6 @@
 - [ ] Improve Categories <> Categorizations in /admin
 - [ ] Improve Tags <> Taggings in /admin
 
-- [ ] Extract secret_key_base into an ENV var (using app.json?)
-
 - [ ] Add titles to Devise controllers
   - [ ] https://stackoverflow.com/questions/3546289/override-devise-registrations-controller#3553561
 
