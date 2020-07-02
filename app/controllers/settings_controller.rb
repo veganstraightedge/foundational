@@ -5,9 +5,11 @@ class SettingsController < ApplicationController
   before_action :set_setting, only: %i[edit update]
 
   def index
+    @page_title = ['Site Settings']
   end
 
   def edit
+    @page_title = ['Site Settings', 'Edit', @setting.name]
   end
 
   def update
