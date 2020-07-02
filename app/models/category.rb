@@ -1,4 +1,6 @@
 class Category < ApplicationRecord
+  resourcify # for rolify roles
+
   has_many :categorizations, dependent: :destroy
 
   before_validation :remove_extra_spaces, on: %i[create update]
