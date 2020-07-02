@@ -35,7 +35,8 @@
 - [ ] Setup Action Text
 
 - [ ] Setup Active Job for emails and uploads (sidekiq)
-  - [ ] Add Bucketeer addon for uploads
+
+- [ ] Add Bucketeer addon for uploads
 
 
 ## Usage
