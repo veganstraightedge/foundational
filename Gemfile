@@ -13,7 +13,9 @@ gem 'pg'
 gem 'puma'
 
 # auth
+gem 'cancancan'
 gem 'devise'
+gem 'rolify'
 
 # assets
 gem 'autoprefixer-rails' # for bootstrap
