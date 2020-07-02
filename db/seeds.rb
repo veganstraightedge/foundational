@@ -2,15 +2,39 @@ puts '==> Seeding…'
 
 if Rails.env.development?
   puts '==> Creating default admin user…'
-  admin_user = User.create! email:                 'admin@example.com',
-                            password:              '123456789012345678901234567890',
-                            password_confirmation: '123456789012345678901234567890'
+  admin_user = User.create! username:              'admin',
+                            email:                 'admin@example.com',
+                            password:              'admin@example.com',
+                            password_confirmation: 'admin@example.com'
 
   # Confirm admin user email
   admin_user.update confirmed_at: Time.current, remember_created_at: Time.current
 
   # Add the admin role to the admin user
   admin_user.add_role :admin
+
+  puts '==> Creating default moderator user…'
+  moderator_user = User.create! username:              'moderator',
+                                email:                 'moderator@example.com',
+                                password:              'moderator@example.com',
+                                password_confirmation: 'moderator@example.com'
+
+  # Confirm moderator user email
+  moderator_user.update confirmed_at: Time.current, remember_created_at: Time.current
+
+  # Add the moderator role to the moderator user
+  moderator_user.add_role :moderator
+
+  puts '==> Creating default contributor user…'
+  contributor_user = User.create! username:              'contributor',
+                                  email:                 'contributor@example.com',
+                                  password:              'contributor@example.com',
+                                  password_confirmation: 'contributor@example.com'
+
+  # Confirm contributor user email
+  contributor_user.update confirmed_at: Time.current, remember_created_at: Time.current
+
+  # The contributor role doesn't exist, only implied by the absence of a role
 end
 
 # Settings
