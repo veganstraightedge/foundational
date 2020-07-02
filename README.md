@@ -2,9 +2,9 @@
 
 ## TODO
 
+- [ ] User Roles
 - [ ] Improve Categories <> Categorizations in /admin
 - [ ] Improve Tags <> Taggings in /admin
-- [ ] User Roles
 
 - [ ] Extract secret_key_base into an ENV var (using app.json?)
 
