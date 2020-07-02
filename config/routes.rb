@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   root to: 'home#index'
 
   # main resources
-  get '@:username', to: 'users#show'
+  get '@:username', to: 'users#show', as: :profile
 
   resources :categories, only: %i[index show]
   resources :tags,       only: %i[index show]

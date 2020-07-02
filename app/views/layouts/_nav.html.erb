@@ -33,6 +33,7 @@
                 <li class="dropdown-divider"></li>
               <% end %>
 
+              <%= link_to "Profile", [:profile, username: Current.user.username], class: "dropdown-item" %>
               <%= link_to "Account", [:account], class: "dropdown-item" %>
 
               <li class="dropdown-divider"></li>
