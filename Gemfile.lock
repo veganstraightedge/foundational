@@ -117,6 +117,7 @@ GEM
       xpath (~> 3.2)
     childprocess (3.0.0)
     concurrent-ruby (1.1.6)
+    connection_pool (2.2.3)
     crass (1.0.6)
     datetime_picker_rails (0.0.7)
       momentjs-rails (>= 2.8.1)
@@ -276,6 +277,7 @@ GEM
     rb-fsevent (0.10.4)
     rb-inotify (0.10.1)
       ffi (~> 1.0)
+    redis (4.2.1)
     regexp_parser (1.7.1)
     representable (3.0.4)
       declarative (< 0.1.0)
@@ -304,6 +306,10 @@ GEM
     selenium-webdriver (3.142.7)
       childprocess (>= 0.5, < 4.0)
       rubyzip (>= 1.2.2)
+    sidekiq (6.1.0)
+      connection_pool (>= 2.2.2)
+      rack (~> 2.0)
+      redis (>= 4.2.0)
     signet (0.14.0)
       addressable (~> 2.3)
       faraday (>= 0.17.3, < 2.0)
@@ -378,9 +384,11 @@ DEPENDENCIES
   rack-attack
   rack-timeout
   rails
+  redis
   rolify
   sassc-rails
   selenium-webdriver
+  sidekiq
   sterile
   turbolinks
   tzinfo-data

@@ -47,6 +47,10 @@ gem 'azure-storage',        require: false
 gem 'google-cloud-storage', require: false
 gem 'image_processing'
 
+# background jobs
+gem 'redis'
+gem 'sidekiq'
+
 # environment variables
 gem 'dotenv-rails'
 
