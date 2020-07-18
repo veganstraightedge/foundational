@@ -1,11 +1,13 @@
 module SettingsHelper
+  SETTINGS_GROUP_ICON_MAP = {
+    authentication: :lock_fill,
+    branding:       :image,
+    localization:   :globe,
+    profiles:       :person_fill
+  }.freeze
+
   def icon_for_settings_group name
-    {
-      authentication: :lock_fill,
-      branding:       :image,
-      localization:   :globe,
-      profiles:       :person_fill
-    }[name.downcase.to_sym]
+    SETTINGS_GROUP_ICON_MAP[name.downcase.to_sym]
   end
 
   def setting_for_site_locale
@@ -24,6 +26,10 @@ module SettingsHelper
   end
 
   def setting_for_brand_image
-    Setting.for("website header image").content&.html_safe
+    setting = Setting.for("website header image")
+
+    if setting.image.attached?
+      url_for(setting.image)
+    end
   end
 end
