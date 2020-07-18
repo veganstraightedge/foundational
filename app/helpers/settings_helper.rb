@@ -32,4 +32,12 @@ module SettingsHelper
       url_for(setting.image)
     end
   end
+
+  def on_settings_index?
+    controller_name == "settings" && action_name == "index"
+  end
+
+  def on_setting? setting
+    params[:id] == setting.id.to_s
+  end
 end

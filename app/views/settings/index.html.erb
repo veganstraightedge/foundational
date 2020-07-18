@@ -17,9 +17,9 @@
 
         <ul class='list-unstyled'>
           <% settings.each do |setting| %>
-            <li class='pb-3'>
-              <b><%= setting.name %></b>
-              <%= Markdown.render(setting.description).html_safe %>
+            <li class='pb-5'>
+              <%= link_to setting.name, [:edit, setting], class: "h4 font-weight-normal" %>
+              <div class="text-muted"><%= Markdown.render(setting.description).html_safe %></div>
 
               <% if setting.form_control == 'image_field' %>
                 <%= render 'settings/form_controls/attached_image_preview', setting: setting %>
