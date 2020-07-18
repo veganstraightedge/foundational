@@ -28,7 +28,6 @@ Rails.application.routes.draw do
 
   # admin
   namespace :admin do
-    resources :settings
     resources :users
     resources :tags
     resources :taggings
