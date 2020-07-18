@@ -15,8 +15,6 @@ module SettingsHelper
   end
 
   def setting_for_brand_image
-    # TEMP: placeholder
-    # TODO: roll into a Setting, with a Bootstrap icon fallback
-    'https://getbootstrap.com/docs/4.5/assets/brand/bootstrap-solid.svg'
+    Setting.for("website header image").content&.html_safe
   end
 end
