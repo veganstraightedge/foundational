@@ -1,4 +1,13 @@
 module SettingsHelper
+  def icon_for_settings_group name
+    {
+      authentication: :lock_fill,
+      branding:       :image,
+      localization:   :globe,
+      profiles:       :person_fill
+    }[name.downcase.to_sym]
+  end
+
   def setting_for_site_locale
     Setting.for("default locale").content.html_safe
   end
