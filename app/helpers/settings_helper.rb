@@ -1,4 +1,15 @@
 module SettingsHelper
+  SETTINGS_GROUP_ICON_MAP = {
+    authentication: :lock_fill,
+    branding:       :image,
+    localization:   :globe,
+    profiles:       :person_fill
+  }.freeze
+
+  def icon_for_settings_group name
+    SETTINGS_GROUP_ICON_MAP[name.downcase.to_sym]
+  end
+
   def setting_for_site_locale
     Setting.for("default locale").content.html_safe
   end
@@ -15,8 +26,10 @@ module SettingsHelper
   end
 
   def setting_for_brand_image
-    # TEMP: placeholder
-    # TODO: roll into a Setting, with a Bootstrap icon fallback
-    'https://getbootstrap.com/docs/4.5/assets/brand/bootstrap-solid.svg'
+    setting = Setting.for("website header image")
+
+    if setting.image.attached?
+      url_for(setting.image)
+    end
   end
 end

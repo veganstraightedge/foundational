@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg sticky-top navbar-light bg-light mb-5">
   <div class="container">
     <%= link_to [:root], class: "navbar-brand" do %>
-      <%= image_tag setting_for_brand_image, width: "30", height: "30", class: "d-inline-block align-top mr-1", loading: "lazy" %>
+      <%= image_tag_for_brand %>
       <%= setting_for_brand_name %>
     <% end %>
 
@@ -21,8 +21,7 @@
         <% if signed_in? %>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <%# TODO: Add person Bootstrap icon %>
-              [GEAR]
+              <%= icon_tag :gear, size: "24x24", class: "text-secondary" %>
             </a>
 
             <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
