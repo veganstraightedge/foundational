@@ -1,22 +1,29 @@
-<h2><%= t "devise.invitations.edit.header" %></h2>
+<div class='container'>
+  <%= tag.div class: wrapper_row_classes do %>
+    <%= tag.div class: wrapper_columns_classes do %>
 
-<%= form_for(resource, as: resource_name, url: invitation_path(resource_name), html: { method: :put }) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
-  <%= f.hidden_field :invitation_token, readonly: true %>
+      <h2 class="display-3"><%= t "devise.invitations.edit.header" %></h2>
 
-  <% if f.object.class.require_password_on_accepting %>
-    <div class="field">
-      <%= f.label :password %><br />
-      <%= f.password_field :password %>
-    </div>
+      <%= form_for(resource, as: resource_name, url: invitation_path(resource_name), html: { method: :put }) do |form| %>
+        <%= render "devise/shared/error_messages", resource: resource %>
+        <%= form.hidden_field :invitation_token, readonly: true %>
 
-    <div class="field">
-      <%= f.label :password_confirmation %><br />
-      <%= f.password_field :password_confirmation %>
-    </div>
+        <%= render "devise/shared/labeled_username_field", form: form %>
+
+        <% if form.object.class.require_password_on_accepting %>
+          <%= render "devise/shared/labeled_password_field",
+                      form: form,
+                      name: :password,
+                      note: "#{@minimum_password_length} characters minimum" %>
+
+          <%= render "devise/shared/labeled_password_field", form: form, name: :password_confirmation %>
+        <% end %>
+
+        <div class="actions">
+          <%= form.submit t("devise.invitations.edit.submit_button") %>
+        </div>
+      <% end %>
+
+    <% end %>
   <% end %>
-
-  <div class="actions">
-    <%= f.submit t("devise.invitations.edit.submit_button") %>
-  </div>
-<% end %>
+</div>

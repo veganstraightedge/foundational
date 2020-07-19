@@ -1,0 +1,26 @@
+<% name         ||= :username %>
+<% label        ||= nil %>
+<% placeholder  ||= "username" %>
+<% autocomplete ||= "username" %>
+<% autofocus    ||= true %>
+<% note         ||= nil %>
+
+<div class="form-group">
+  <%= form.label name, label %>
+
+  <div class="input-group">
+    <div class="input-group-prepend">
+      <span class="input-group-text">@</span>
+    </div>
+
+    <%= form.text_field name,
+                        placeholder:  placeholder,
+                        autocomplete: autocomplete,
+                        autofocus:    autofocus,
+                        class:        "form-control form-control-lg" %>
+
+    <% if note.present? %>
+      <p class="form-text text-muted"><%= note.html_safe %></p>
+    <% end %>
+  </div>
+</div>
