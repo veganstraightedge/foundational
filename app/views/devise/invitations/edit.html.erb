@@ -1,0 +1,29 @@
+<div class='container'>
+  <%= tag.div class: wrapper_row_classes do %>
+    <%= tag.div class: wrapper_columns_classes do %>
+
+      <h2 class="display-3"><%= t "devise.invitations.edit.header" %></h2>
+
+      <%= form_for(resource, as: resource_name, url: invitation_path(resource_name), html: { method: :put }) do |form| %>
+        <%= render "devise/shared/error_messages", resource: resource %>
+        <%= form.hidden_field :invitation_token, readonly: true %>
+
+        <%= render "devise/shared/labeled_username_field", form: form %>
+
+        <% if form.object.class.require_password_on_accepting %>
+          <%= render "devise/shared/labeled_password_field",
+                      form: form,
+                      name: :password,
+                      note: "#{@minimum_password_length} characters minimum" %>
+
+          <%= render "devise/shared/labeled_password_field", form: form, name: :password_confirmation %>
+        <% end %>
+
+        <div class="actions">
+          <%= form.submit t("devise.invitations.edit.submit_button") %>
+        </div>
+      <% end %>
+
+    <% end %>
+  <% end %>
+</div>

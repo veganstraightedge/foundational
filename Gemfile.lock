@@ -129,6 +129,9 @@ GEM
       railties (>= 4.1.0)
       responders
       warden (~> 1.2.3)
+    devise_invitable (2.0.2)
+      actionmailer (>= 5.0)
+      devise (>= 4.6)
     digest-crc (0.5.1)
     dotenv (2.7.6)
     dotenv-rails (2.7.6)
@@ -371,6 +374,7 @@ DEPENDENCIES
   cancancan
   capybara
   devise
+  devise_invitable
   dotenv-rails
   google-cloud-storage
   i18n-debug

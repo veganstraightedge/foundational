@@ -15,6 +15,7 @@ gem 'puma'
 # auth
 gem 'cancancan'
 gem 'devise'
+gem 'devise_invitable'
 gem 'rolify'
 
 # assets
