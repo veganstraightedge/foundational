@@ -61,6 +61,7 @@ end
 
 group :development do
   gem 'listen'
+  gem 'rubocop' # style linter
   gem 'web-console'
 end
 
