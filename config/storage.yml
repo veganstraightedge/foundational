@@ -4,7 +4,7 @@ local:
 
 test:
   service: Disk
-  root: <%= Rails.root.join 'tmp', 'storage' %>
+  root: <%= Rails.root.join("tmp/storage") %>
 
 amazon:
   service: S3
@@ -17,17 +17,17 @@ google:
   service: GCS
   credentials:
     type: service_account
-    project_id:     <%= ENV.fetch('GCP_PROJECT_ID') { 'TODO' } %>
-    private_key_id: <%= ENV.fetch('GCP_PRIVATE_KEY_ID') { 'TODO' } %>
-    private_key:    <%= ENV.fetch('GCP_PRIVATE_KEY') { 'TODO' } %>
-    client_email:   <%= ENV.fetch('GCP_CLIENT_EMAIL') { 'TODO' } %>
-    client_id:      <%= ENV.fetch('GCP_CLIENT_ID') { 'TODO' } %>
-    auth_uri: "https://accounts.google.com/o/oauth2/auth"
-    token_uri: "https://accounts.google.com/o/oauth2/token"
+    project_id:                  <%= ENV.fetch('GCP_PROJECT_ID')     { 'TODO' } %>
+    private_key_id:              <%= ENV.fetch('GCP_PRIVATE_KEY_ID') { 'TODO' } %>
+    private_key:                 <%= ENV.fetch('GCP_PRIVATE_KEY')    { 'TODO' } %>
+    client_email:                <%= ENV.fetch('GCP_CLIENT_EMAIL')   { 'TODO' } %>
+    client_id:                   <%= ENV.fetch('GCP_CLIENT_ID')      { 'TODO' } %>
+    auth_uri:                    "https://accounts.google.com/o/oauth2/auth"
+    token_uri:                   "https://accounts.google.com/o/oauth2/token"
     auth_provider_x509_cert_url: "https://www.googleapis.com/oauth2/v1/certs"
-    client_x509_cert_url: <%= ENV.fetch('GCP_CLIENT_X509_CERT_URL') { 'TODO' } %>
+    client_x509_cert_url:        <%= ENV.fetch('GCP_CLIENT_X509_CERT_URL') { 'TODO' } %>
   project: <%= ENV.fetch('GCP_PROJECT') { 'TODO' } %>
-  bucket: <%= ENV.fetch('GCP_BUCKET') { 'TODO' } %>
+  bucket:  <%= ENV.fetch('GCP_BUCKET') { 'TODO' } %>
 
 microsoft:
   service: AzureStorage
