@@ -71,7 +71,7 @@ Setting.create! name:            'FROM Email Address',
 Setting.create! name:            'Minimum Password Length',
                 group:           'Authentication',
                 description:     'How long does a user’s password have to be?',
-                content:         ENV.fetch('FOUNDATIONAL_PASSWORD_MINIMUM') { 12 },
+                content:         ENV.fetch('FOUNDATIONAL_PASSWORD_MINIMUM', 12),
                 default_content: 12,
                 form_control:    'number_field'
 
@@ -122,7 +122,7 @@ Setting.create! name:            'Website Header Image',
                 group:           'Branding',
                 description:     'What image will display in the header nav bar next
                                   to the Website Name? A square image is recommended.'.squish,
-                content:         ENV.fetch('FOUNDATIONAL_WEBSITE_IMAGE') { nil },
+                content:         ENV.fetch('FOUNDATIONAL_WEBSITE_IMAGE', nil),
                 default_content: nil,
                 form_control:    'image_field'
 

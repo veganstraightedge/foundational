@@ -185,7 +185,7 @@ Devise.setup do |config|
 
   # ==> Configuration for :validatable
   # Range for password length.
-  minimum_password_length = ENV.fetch('FOUNDATIONAL_PASSWORD_MINIMUM') { 12 }
+  minimum_password_length = ENV.fetch('FOUNDATIONAL_PASSWORD_MINIMUM', 12)
   config.password_length  = Integer(minimum_password_length)..128
 
   # Email regex used to validate email formats. It simply asserts that
