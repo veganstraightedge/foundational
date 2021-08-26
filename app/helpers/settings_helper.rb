@@ -28,9 +28,7 @@ module SettingsHelper
   def setting_for_brand_image
     setting = Setting.for('website header image')
 
-    if setting.image.attached?
-      url_for(setting.image)
-    end
+    url_for(setting.image) if setting.image.attached?
   end
 
   def on_settings_index?

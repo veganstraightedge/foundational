@@ -195,10 +195,3 @@ Style/HashSyntax:
   Exclude:
     - 'app/models/role.rb'
     - 'db/migrate/20200702034402_rolify_create_roles.rb'
-
-# Offense count: 3
-# Cop supports --auto-correct.
-Style/IfUnlessModifier:
-  Exclude:
-    - 'app/helpers/settings_helper.rb'
-    - 'bin/bundle'
