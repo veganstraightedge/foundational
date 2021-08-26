@@ -23,20 +23,20 @@ class TagDashboard < Administrate::BaseDashboard
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = %i[
     taggings
-  id
-  name
-  slug
+    id
+    name
+    slug
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = %i[
     taggings
-  id
-  name
-  slug
-  created_at
-  updated_at
+    id
+    name
+    slug
+    created_at
+    updated_at
   ].freeze
 
   # FORM_ATTRIBUTES
@@ -44,8 +44,8 @@ class TagDashboard < Administrate::BaseDashboard
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = %i[
     taggings
-  name
-  slug
+    name
+    slug
   ].freeze
 
   # COLLECTION_FILTERS

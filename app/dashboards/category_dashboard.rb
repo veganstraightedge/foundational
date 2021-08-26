@@ -23,20 +23,20 @@ class CategoryDashboard < Administrate::BaseDashboard
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = %i[
     categorizations
-  id
-  name
-  slug
+    id
+    name
+    slug
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = %i[
     categorizations
-  id
-  name
-  slug
-  created_at
-  updated_at
+    id
+    name
+    slug
+    created_at
+    updated_at
   ].freeze
 
   # FORM_ATTRIBUTES
@@ -44,8 +44,8 @@ class CategoryDashboard < Administrate::BaseDashboard
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = %i[
     categorizations
-  name
-  slug
+    name
+    slug
   ].freeze
 
   # COLLECTION_FILTERS

@@ -32,29 +32,29 @@ class UserDashboard < Administrate::BaseDashboard
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = %i[
     id
-  email
-  encrypted_password
-  reset_password_token
+    email
+    encrypted_password
+    reset_password_token
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = %i[
     id
-  email
-  encrypted_password
-  reset_password_token
-  reset_password_sent_at
-  remember_created_at
-  confirmation_token
-  confirmed_at
-  confirmation_sent_at
-  unconfirmed_email
-  failed_attempts
-  unlock_token
-  locked_at
-  created_at
-  updated_at
+    email
+    encrypted_password
+    reset_password_token
+    reset_password_sent_at
+    remember_created_at
+    confirmation_token
+    confirmed_at
+    confirmation_sent_at
+    unconfirmed_email
+    failed_attempts
+    unlock_token
+    locked_at
+    created_at
+    updated_at
   ].freeze
 
   # FORM_ATTRIBUTES
@@ -62,17 +62,17 @@ class UserDashboard < Administrate::BaseDashboard
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = %i[
     email
-  encrypted_password
-  reset_password_token
-  reset_password_sent_at
-  remember_created_at
-  confirmation_token
-  confirmed_at
-  confirmation_sent_at
-  unconfirmed_email
-  failed_attempts
-  unlock_token
-  locked_at
+    encrypted_password
+    reset_password_token
+    reset_password_sent_at
+    remember_created_at
+    confirmation_token
+    confirmed_at
+    confirmation_sent_at
+    unconfirmed_email
+    failed_attempts
+    unlock_token
+    locked_at
   ].freeze
 
   # COLLECTION_FILTERS
