@@ -186,12 +186,3 @@ Style/GuardClause:
   Exclude:
     - 'app/helpers/settings_helper.rb'
     - 'db/migrate/20210825073956_add_service_name_to_active_storage_blobs.active_storage.rb'
-
-# Offense count: 8
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle, UseHashRocketsWithSymbolValues, PreferHashRocketsForNonAlnumEndingSymbols.
-# SupportedStyles: ruby19, hash_rockets, no_mixed_keys, ruby19_no_mixed_keys
-Style/HashSyntax:
-  Exclude:
-    - 'app/models/role.rb'
-    - 'db/migrate/20200702034402_rolify_create_roles.rb'
