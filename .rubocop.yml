@@ -1,4 +1,46 @@
-inherit_from: .rubocop_todo.yml
-
 AllCops:
   NewCops: enable
+  Exclude:
+    - db/schema.rb
+    - bin/*
+    - node_modules/**/*
+
+Layout/HashAlignment:
+  EnforcedHashRocketStyle: table
+  EnforcedColonStyle: table
+
+Style/Documentation:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Style/MethodDefParentheses:
+  EnforcedStyle: require_no_parentheses
+
+# TODO: Debiggen these
+# Offense count: 2
+# Configuration parameters: IgnoredMethods, CountRepeatedAttributes.
+Metrics/AbcSize:
+  Max: 28
+
+# Offense count: 2
+# Configuration parameters: CountComments, CountAsOne, ExcludedMethods, IgnoredMethods.
+# IgnoredMethods: refine
+Metrics/BlockLength:
+  Max: 107
+
+# Offense count: 1
+# Configuration parameters: IgnoredMethods.
+Metrics/CyclomaticComplexity:
+  Max: 9
+
+# Offense count: 6
+# Configuration parameters: CountComments, CountAsOne, ExcludedMethods, IgnoredMethods.
+Metrics/MethodLength:
+  Max: 20
+
+# Offense count: 1
+# Configuration parameters: IgnoredMethods.
+Metrics/PerceivedComplexity:
+  Max: 9

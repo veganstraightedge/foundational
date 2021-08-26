@@ -35,7 +35,7 @@ class Icon
   end
 
   def svg_tag_class
-    svg['class'] += " " + options[:class] if options[:class].present?
+    svg['class'] += " #{options[:class]}" if options[:class].present?
   end
 
   def svg_tag_id
@@ -43,7 +43,7 @@ class Icon
   end
 
   def svg_tag_size
-    width, height = options[:size].split("x") if options[:size].present?
+    width, height = options[:size].split('x') if options[:size].present?
 
     svg['width']  = options[:width]  if options[:width].present?
     svg['height'] = options[:height] if options[:height].present?

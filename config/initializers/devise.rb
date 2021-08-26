@@ -13,7 +13,10 @@ Devise.setup do |config|
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
   # TODO: read this from an ENV var
-  # config.secret_key = 'c219f6e21f91559681da1ffd3f9e54915f3cc30b09c7ba65b9acf83fc58909452f7e37227f39926fb428e1082c552fa0a85a37f665c92dbbcec571754067c2c2'
+  # config.pepper =
+  #   'c219f6e21f91559681da1ffd3f9e54915f3cc30b09c7ba65b
+  #    9acf83fc58909452f7e37227f39926fb428e1082c552fa
+  #    0a85a37f665c92dbbcec571754067c2c2'.squish.tr(' ', '')
 
   # ==> Controller configuration
   # Configure the parent class to the devise controllers.
@@ -126,7 +129,10 @@ Devise.setup do |config|
 
   # Set up a pepper to generate the hashed password.
   # TODO: read this from an ENV var
-  # config.pepper = '1f001b3a187f9ff081634574cf7499f0f003020ed2aa0a23751e30489b6b08425bcf8eae369fd71c57114bbe1edfeca401e6ce866e3c9118e5e50817093a6a04'
+  # config.pepper =
+  #   '1f001b3a187f9ff081634574cf7499f0f003020ed2aa0a
+  #    23751e30489b6b08425bcf8eae369fd71c57114bbe1edf
+  #    eca401e6ce866e3c9118e5e50817093a6a04'.squish.tr(' ', '')
 
   # Send a notification to the original email when the user's email is changed.
   config.send_email_changed_notification = true
@@ -179,7 +185,7 @@ Devise.setup do |config|
 
   # ==> Configuration for :validatable
   # Range for password length.
-  minimum_password_length = ENV.fetch('FOUNDATIONAL_PASSWORD_MINIMUM') { 12 }
+  minimum_password_length = ENV.fetch('FOUNDATIONAL_PASSWORD_MINIMUM', 12)
   config.password_length  = Integer(minimum_password_length)..128
 
   # Email regex used to validate email formats. It simply asserts that

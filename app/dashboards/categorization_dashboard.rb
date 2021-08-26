@@ -1,4 +1,4 @@
-require "administrate/base_dashboard"
+require 'administrate/base_dashboard'
 
 class CategorizationDashboard < Administrate::BaseDashboard
   # ATTRIBUTE_TYPES
@@ -8,12 +8,12 @@ class CategorizationDashboard < Administrate::BaseDashboard
   # which determines how the attribute is displayed
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
-    category: Field::BelongsTo,
-    id: Field::Number,
-    categorizable_id: Field::Number,
+    category:           Field::BelongsTo,
+    id:                 Field::Number,
+    categorizable_id:   Field::Number,
     categorizable_type: Field::String,
-    created_at: Field::DateTime,
-    updated_at: Field::DateTime,
+    created_at:         Field::DateTime,
+    updated_at:         Field::DateTime
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -22,30 +22,30 @@ class CategorizationDashboard < Administrate::BaseDashboard
   # By default, it's limited to four items to reduce clutter on index pages.
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = %i[
-  category
-  id
-  categorizable_id
-  categorizable_type
+    category
+    id
+    categorizable_id
+    categorizable_type
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = %i[
-  category
-  id
-  categorizable_id
-  categorizable_type
-  created_at
-  updated_at
+    category
+    id
+    categorizable_id
+    categorizable_type
+    created_at
+    updated_at
   ].freeze
 
   # FORM_ATTRIBUTES
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = %i[
-  category
-  categorizable_id
-  categorizable_type
+    category
+    categorizable_id
+    categorizable_type
   ].freeze
 
   # COLLECTION_FILTERS

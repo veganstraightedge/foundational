@@ -1,6 +1,6 @@
 class SettingsController < ApplicationController
   before_action :authenticate_user!
-  # TODO add admin user role check
+  # TODO: add admin user role check
   before_action :set_grouped_settings
   before_action :set_setting, only: %i[edit update]
 

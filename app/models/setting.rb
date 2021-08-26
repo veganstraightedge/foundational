@@ -24,14 +24,14 @@ class Setting < ApplicationRecord
   private
 
   def strip_name_blankspace
-    self.name = self.name.strip
+    self.name = name.strip
   end
 
   def generate_slug
-    self.slug = self.name.downcase
+    self.slug = name.downcase
   end
 
   def number_setting?
-    self.form_control == 'number_field'
+    form_control == 'number_field'
   end
 end
