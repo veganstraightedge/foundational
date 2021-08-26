@@ -2,7 +2,7 @@ class Ability
   include CanCan::Ability
 
   def initialize user
-    case user.has_role? :admin
+    if user.has_role? :admin
       can :manage, :all
     elsif user.has_role? :moderator
       can :manage, Category
