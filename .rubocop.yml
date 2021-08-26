@@ -5,3 +5,6 @@ AllCops:
   Exclude:
     - db/schema.rb
     - bin/*
+
+Style/MethodDefParentheses:
+  EnforcedStyle: require_no_parentheses
