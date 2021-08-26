@@ -69,14 +69,6 @@ Layout/MultilineMethodCallIndentation:
   Exclude:
     - 'bin/yarn'
 
-# Offense count: 1
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle, IndentationWidth.
-# SupportedStyles: aligned, indented
-Layout/MultilineOperationIndentation:
-  Exclude:
-    - 'bin/bundle'
-
 # Offense count: 2
 # Configuration parameters: IgnoredMethods, CountRepeatedAttributes.
 Metrics/AbcSize:
