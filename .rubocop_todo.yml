@@ -49,18 +49,6 @@ Layout/FirstArrayElementIndentation:
     - 'app/dashboards/tagging_dashboard.rb'
     - 'app/dashboards/user_dashboard.rb'
 
-# Offense count: 64
-# Cop supports --auto-correct.
-# Configuration parameters: AllowMultipleStyles, EnforcedHashRocketStyle, EnforcedColonStyle, EnforcedLastArgumentHashStyle.
-# SupportedHashRocketStyles: key, separator, table
-# SupportedColonStyles: key, separator, table
-# SupportedLastArgumentHashStyles: always_inspect, always_ignore, ignore_implicit, ignore_explicit
-Layout/HashAlignment:
-  Exclude:
-    - 'app/helpers/settings_helper.rb'
-    - 'app/models/markdown.rb'
-    - 'db/seeds.rb'
-
 # Offense count: 2
 # Configuration parameters: IgnoredMethods, CountRepeatedAttributes.
 Metrics/AbcSize:

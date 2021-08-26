@@ -8,12 +8,12 @@ class CategorizationDashboard < Administrate::BaseDashboard
   # which determines how the attribute is displayed
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
-    category: Field::BelongsTo,
-    id: Field::Number,
-    categorizable_id: Field::Number,
+    category:           Field::BelongsTo,
+    id:                 Field::Number,
+    categorizable_id:   Field::Number,
     categorizable_type: Field::String,
-    created_at: Field::DateTime,
-    updated_at: Field::DateTime
+    created_at:         Field::DateTime,
+    updated_at:         Field::DateTime
   }.freeze
 
   # COLLECTION_ATTRIBUTES

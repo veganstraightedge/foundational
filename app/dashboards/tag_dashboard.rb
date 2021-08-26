@@ -8,10 +8,10 @@ class TagDashboard < Administrate::BaseDashboard
   # which determines how the attribute is displayed
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
-    taggings: Field::HasMany,
-    id: Field::Number,
-    name: Field::String,
-    slug: Field::String,
+    taggings:   Field::HasMany,
+    id:         Field::Number,
+    name:       Field::String,
+    slug:       Field::String,
     created_at: Field::DateTime,
     updated_at: Field::DateTime
   }.freeze

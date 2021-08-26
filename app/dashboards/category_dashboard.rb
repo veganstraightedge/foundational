@@ -9,11 +9,11 @@ class CategoryDashboard < Administrate::BaseDashboard
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
     categorizations: Field::HasMany,
-    id: Field::Number,
-    name: Field::String,
-    slug: Field::String,
-    created_at: Field::DateTime,
-    updated_at: Field::DateTime
+    id:              Field::Number,
+    name:            Field::String,
+    slug:            Field::String,
+    created_at:      Field::DateTime,
+    updated_at:      Field::DateTime
   }.freeze
 
   # COLLECTION_ATTRIBUTES

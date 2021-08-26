@@ -8,21 +8,21 @@ class UserDashboard < Administrate::BaseDashboard
   # which determines how the attribute is displayed
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
-    id: Field::Number,
-    email: Field::String,
-    encrypted_password: Field::String,
-    reset_password_token: Field::String,
+    id:                     Field::Number,
+    email:                  Field::String,
+    encrypted_password:     Field::String,
+    reset_password_token:   Field::String,
     reset_password_sent_at: Field::DateTime,
-    remember_created_at: Field::DateTime,
-    confirmation_token: Field::String,
-    confirmed_at: Field::DateTime,
-    confirmation_sent_at: Field::DateTime,
-    unconfirmed_email: Field::String,
-    failed_attempts: Field::Number,
-    unlock_token: Field::String,
-    locked_at: Field::DateTime,
-    created_at: Field::DateTime,
-    updated_at: Field::DateTime
+    remember_created_at:    Field::DateTime,
+    confirmation_token:     Field::String,
+    confirmed_at:           Field::DateTime,
+    confirmation_sent_at:   Field::DateTime,
+    unconfirmed_email:      Field::String,
+    failed_attempts:        Field::Number,
+    unlock_token:           Field::String,
+    locked_at:              Field::DateTime,
+    created_at:             Field::DateTime,
+    updated_at:             Field::DateTime
   }.freeze
 
   # COLLECTION_ATTRIBUTES

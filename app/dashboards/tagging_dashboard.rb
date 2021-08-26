@@ -8,12 +8,12 @@ class TaggingDashboard < Administrate::BaseDashboard
   # which determines how the attribute is displayed
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
-    tag: Field::BelongsTo,
-    id: Field::Number,
-    taggable_id: Field::Number,
+    tag:           Field::BelongsTo,
+    id:            Field::Number,
+    taggable_id:   Field::Number,
     taggable_type: Field::String,
-    created_at: Field::DateTime,
-    updated_at: Field::DateTime
+    created_at:    Field::DateTime,
+    updated_at:    Field::DateTime
   }.freeze
 
   # COLLECTION_ATTRIBUTES
