@@ -147,8 +147,3 @@ Metrics/PerceivedComplexity:
 Style/CommentAnnotation:
   Exclude:
     - 'app/controllers/settings_controller.rb'
-
-# Offense count: 30
-# Configuration parameters: AllowedConstants.
-Style/Documentation:
-  Enabled: false

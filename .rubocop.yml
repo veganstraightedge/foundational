@@ -6,6 +6,9 @@ AllCops:
     - db/schema.rb
     - bin/*
 
+Style/Documentation:
+  Enabled: false
+
 Style/FrozenStringLiteralComment:
   Enabled: false
 
