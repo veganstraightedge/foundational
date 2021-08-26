@@ -284,15 +284,3 @@ Style/StringLiterals:
 Style/SymbolArray:
   EnforcedStyle: percent
   MinSize: 11
-
-# Offense count: 5
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyleForMultiline.
-# SupportedStylesForMultiline: comma, consistent_comma, no_comma
-Style/TrailingCommaInHashLiteral:
-  Exclude:
-    - 'app/dashboards/categorization_dashboard.rb'
-    - 'app/dashboards/category_dashboard.rb'
-    - 'app/dashboards/tag_dashboard.rb'
-    - 'app/dashboards/tagging_dashboard.rb'
-    - 'app/dashboards/user_dashboard.rb'

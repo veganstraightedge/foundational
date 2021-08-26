@@ -13,7 +13,7 @@ class TagDashboard < Administrate::BaseDashboard
     name: Field::String,
     slug: Field::String,
     created_at: Field::DateTime,
-    updated_at: Field::DateTime,
+    updated_at: Field::DateTime
   }.freeze
 
   # COLLECTION_ATTRIBUTES
