@@ -6,5 +6,8 @@ AllCops:
     - db/schema.rb
     - bin/*
 
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
 Style/MethodDefParentheses:
   EnforcedStyle: require_no_parentheses

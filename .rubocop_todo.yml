@@ -160,16 +160,3 @@ Style/Documentation:
 Style/EmptyMethod:
   Exclude:
     - 'app/controllers/home_controller.rb'
-
-# Offense count: 1
-# Cop supports --auto-correct.
-Style/ExpandPathArguments:
-  Exclude:
-    - 'bin/bundle'
-
-# Offense count: 85
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle.
-# SupportedStyles: always, always_true, never
-Style/FrozenStringLiteralComment:
-  Enabled: false
