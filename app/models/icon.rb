@@ -35,7 +35,7 @@ class Icon
   end
 
   def svg_tag_class
-    svg['class'] += ' ' + options[:class] if options[:class].present?
+    svg['class'] += " #{options[:class]}" if options[:class].present?
   end
 
   def svg_tag_id

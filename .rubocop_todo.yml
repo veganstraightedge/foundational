@@ -262,10 +262,3 @@ Style/SpecialGlobalVars:
 Style/StderrPuts:
   Exclude:
     - 'bin/yarn'
-
-# Offense count: 1
-# Cop supports --auto-correct.
-# Configuration parameters: Mode.
-Style/StringConcatenation:
-  Exclude:
-    - 'app/models/icon.rb'
