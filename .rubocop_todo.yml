@@ -179,10 +179,3 @@ Style/FrozenStringLiteralComment:
 Style/GlobalStdStream:
   Exclude:
     - 'config/environments/production.rb'
-
-# Offense count: 2
-# Configuration parameters: MinBodyLength.
-Style/GuardClause:
-  Exclude:
-    - 'app/helpers/settings_helper.rb'
-    - 'db/migrate/20210825073956_add_service_name_to_active_storage_blobs.active_storage.rb'
