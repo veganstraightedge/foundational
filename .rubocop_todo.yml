@@ -269,10 +269,3 @@ Style/StderrPuts:
 Style/StringConcatenation:
   Exclude:
     - 'app/models/icon.rb'
-
-# Offense count: 212
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle, ConsistentQuotesInMultiline.
-# SupportedStyles: single_quotes, double_quotes
-Style/StringLiterals:
-  Enabled: false
