@@ -3,6 +3,7 @@ AllCops:
   Exclude:
     - db/schema.rb
     - bin/*
+    - node_modules/**/*
 
 Layout/HashAlignment:
   EnforcedHashRocketStyle: table
