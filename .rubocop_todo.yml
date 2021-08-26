@@ -15,14 +15,6 @@ Layout/ArgumentAlignment:
     - 'bin/webpack'
     - 'bin/webpack-dev-server'
 
-# Offense count: 4
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle.
-# SupportedStyles: leading, trailing
-Layout/DotPosition:
-  Exclude:
-    - 'bin/yarn'
-
 # Offense count: 2
 # Configuration parameters: IgnoredMethods, CountRepeatedAttributes.
 Metrics/AbcSize:
