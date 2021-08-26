@@ -23,12 +23,6 @@ Layout/DotPosition:
   Exclude:
     - 'bin/yarn'
 
-# Offense count: 6
-# Cop supports --auto-correct.
-Layout/EmptyLineAfterGuardClause:
-  Exclude:
-    - 'bin/bundle'
-
 # Offense count: 2
 # Configuration parameters: IgnoredMethods, CountRepeatedAttributes.
 Metrics/AbcSize:
