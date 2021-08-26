@@ -249,10 +249,3 @@ Style/RedundantFetchBlock:
 Style/RedundantSelf:
   Exclude:
     - 'app/models/setting.rb'
-
-# Offense count: 1
-# Cop supports --auto-correct.
-# Configuration parameters: RequireEnglish.
-# SupportedStyles: use_perl_names, use_english_names
-Style/SpecialGlobalVars:
-  EnforcedStyle: use_perl_names
