@@ -108,12 +108,6 @@ Lint/AssignmentInCondition:
   Exclude:
     - 'db/migrate/20210825073956_add_service_name_to_active_storage_blobs.active_storage.rb'
 
-# Offense count: 1
-# Configuration parameters: AllowComments.
-Lint/EmptyFile:
-  Exclude:
-    - 'app/dashboards/categorizations_dashboard.rb'
-
 # Offense count: 2
 # Configuration parameters: IgnoredMethods, CountRepeatedAttributes.
 Metrics/AbcSize:
