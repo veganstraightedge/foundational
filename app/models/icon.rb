@@ -42,6 +42,7 @@ class Icon
     svg['id'] = options[:id] if options[:id].present?
   end
 
+  # rubocop:disable Metrics/AbcSize
   def svg_tag_size
     width, height = options[:size].split('x') if options[:size].present?
 
@@ -51,4 +52,5 @@ class Icon
     svg['width']  = width  if width.present?
     svg['height'] = height if height.present?
   end
+  # rubocop:enable Metrics/AbcSize
 end
