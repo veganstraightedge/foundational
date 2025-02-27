@@ -24,6 +24,10 @@ Metrics/MethodLength:
   Exclude:
     - db/migrate/*
 
+Rails/SkipsModelValidations:
+  Exclude:
+    - db/migrate/*.active_storage.rb
+
 Style/Documentation:
   Enabled: false
 
