@@ -42,6 +42,6 @@ class SettingsController < ApplicationController
   end
 
   def setting_params
-    params.require(:setting).permit(:content, :image)
+    params.expect(setting: %i[content image])
   end
 end
