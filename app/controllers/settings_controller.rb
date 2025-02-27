@@ -2,7 +2,8 @@ class SettingsController < ApplicationController
   before_action :authenticate_user!
   # TODO: add admin user role check
   before_action :set_grouped_settings
-  before_action :set_setting, only: %i[edit update]
+  before_action :set_setting,                  only: %i[edit update]
+  before_action :set_setting_previous_content, only: :update
 
   def index
     @page_title = ['Site Settings']
@@ -13,12 +14,10 @@ class SettingsController < ApplicationController
   end
 
   def update
-    previous_content = @setting.content
-
     if @setting.update(setting_params)
       notice =  []
       notice << "Setting **“#{@setting.name}”** was successfully updated"
-      notice << "from **“#{previous_content}”**"
+      notice << "from **“#{@setting_previous_content}”**"
       notice << "to   **“#{@setting.content}”**."
       notice =  notice.join(' ')
 
@@ -32,6 +31,10 @@ class SettingsController < ApplicationController
 
   def set_setting
     @setting = Setting.find(params[:id])
+  end
+
+  def set_setting_previous_content
+    @setting_previous_content = @setting.content
   end
 
   def set_grouped_settings
