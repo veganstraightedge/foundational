@@ -36,7 +36,7 @@
               <%= link_to "Account", [:account], class: "dropdown-item" %>
 
               <li class="dropdown-divider"></li>
-              <%= link_to "Sign Out", [:signout], class: "dropdown-item" %>
+              <%= link_to "Sign Out", [:signout], data: { turbo_method: :delete }, class: "dropdown-item" %>
             </ul>
           </li>
         <% else %>
