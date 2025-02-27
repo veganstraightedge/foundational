@@ -1,3 +1,7 @@
+# TODO: confirm that Brewfile does this correctly
+# On macOS with Homebrew:
+#   gem install pg -- --with-pg-config=/usr/local/bin/pg_config
+
 default: &default
   adapter: postgresql
   encoding: unicode
@@ -5,16 +9,25 @@ default: &default
 
 development:
   <<: *default
-  host: localhost
   database: foundational_development
 
 test:
   <<: *default
-  host: localhost
   database: foundational_test
 
+# TODO: configure this for Heroku single database
+#       see: https://github.com/search?q=repo%3Arails%2Fsolid_queue+heroku
 production:
-  <<: *default
-  database: foundational_production
-  username: foundational
-  password: <%= ENV['FOUNDATIONAL_DATABASE_PASSWORD'] %>
+  primary: &primary_production
+    <<: *default
+    database: foundational_production
+    username: foundational
+    password: <%= ENV["FOUNDATIONAL_DATABASE_PASSWORD"] %>
+  cache:
+    <<: *primary_production
+    database: foundational_production_cache
+    migrations_paths: db/cache_migrate
+  queue:
+    <<: *primary_production
+    database: foundational_production_queue
+    migrations_paths: db/queue_migrate

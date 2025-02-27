@@ -18,7 +18,7 @@ module Admin
     private
 
     def ensure_admin_user!
-      return redirect_to :root unless current_user.has_role? :admin
+      redirect_to :root unless current_user.has_role? :admin
     end
   end
 end

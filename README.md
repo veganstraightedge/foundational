@@ -73,7 +73,7 @@ Everyone interacting in all of Foundational codebases, issue trackers, chat room
 
 **PUBLIC DOMAIN**
 
-Your heart is as free as the air you breathe. \
+Your heart is as free as the air you breathe.
 The ground you stand on is liberated territory.
 
 In legal text, **Foundational** is dedicated to the public domain

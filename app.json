@@ -5,7 +5,8 @@
     "cms",
     "publishing",
     "rubyonrails",
-    "rails"
+    "rails",
+    "template"
   ],
 
   "website": "https://github.com/veganstraightedge/foundational",
@@ -22,24 +23,22 @@
       "generator":   "secret"
     },
 
-    "DISABLE_SPRING": "true",
     "MIN_THREADS": "1",
     "MAX_THREADS": "1",
-    "REDIS_PROVIDER": "REDIS_URL"
   },
 
   "addons": [
-    "heroku-postgresql:hobby-dev",
-    "heroku-redis:hobby-dev"
+    "heroku-postgresql:essential-0",
   ],
 
-  "stack": "heroku-18",
+  "stack": "heroku-24",
 
   "environments": {
     "test": {
       "buildpacks": [
         { "url": "heroku/ruby" },
-        { "url": "https://github.com/heroku/heroku-buildpack-activestorage-preview" }
+        { "url": "heroku/heroku-buildpack-activestorage-preview" }
+        { "url": "heroku-community/apt" }
       ]
     }
   }

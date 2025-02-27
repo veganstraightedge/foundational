@@ -1,10 +1,10 @@
+test:
+  service: Disk
+  root: <%= Rails.root.join 'tmp/storage' %>
+
 local:
   service: Disk
   root: <%= Rails.root.join 'storage' %>
-
-test:
-  service: Disk
-  root: <%= Rails.root.join("tmp/storage") %>
 
 amazon:
   service: S3
@@ -22,9 +22,9 @@ google:
     private_key:                 <%= ENV.fetch('GCP_PRIVATE_KEY')    { 'TODO' } %>
     client_email:                <%= ENV.fetch('GCP_CLIENT_EMAIL')   { 'TODO' } %>
     client_id:                   <%= ENV.fetch('GCP_CLIENT_ID')      { 'TODO' } %>
-    auth_uri:                    "https://accounts.google.com/o/oauth2/auth"
-    token_uri:                   "https://accounts.google.com/o/oauth2/token"
-    auth_provider_x509_cert_url: "https://www.googleapis.com/oauth2/v1/certs"
+    auth_uri:                    'https://accounts.google.com/o/oauth2/auth'
+    token_uri:                   'https://accounts.google.com/o/oauth2/token'
+    auth_provider_x509_cert_url: 'https://www.googleapis.com/oauth2/v1/certs'
     client_x509_cert_url:        <%= ENV.fetch('GCP_CLIENT_X509_CERT_URL') { 'TODO' } %>
   project: <%= ENV.fetch('GCP_PROJECT') { 'TODO' } %>
   bucket:  <%= ENV.fetch('GCP_BUCKET') { 'TODO' } %>
@@ -36,21 +36,19 @@ microsoft:
   container:            <%= ENV.fetch('AZURE_CONTAINER')            { 'TODO' } %>
 
 production:
-  service: Mirror
-  primary: amazon
-  mirrors:
-    - google
-    - microsoft
+  service: amazon
 
 # To test mirroring setup from local development,
-# Edit development.rb, chaging this:
+# Edit development.rb, changing this:
 # config.active_storage.service = :local
 # to this:
 # config.active_storage.service = :development_mirrors
 development_mirrors:
   service: Mirror
   primary: local
-  mirrors:
-    - amazon
-    - google
-    - microsoft
+  mirrors: [amazon, google, microsoft]
+
+mirror:
+  service: Mirror
+  primary: amazon
+  mirrors: [amazon, google, microsoft]
