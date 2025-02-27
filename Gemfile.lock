@@ -137,6 +137,10 @@ GEM
       warden (~> 1.2.3)
     digest-crc (0.7.0)
       rake (>= 12.0.0, < 14.0.0)
+    dotenv (3.1.7)
+    dotenv-rails (3.1.7)
+      dotenv (= 3.1.7)
+      railties (>= 6.1)
     drb (2.2.1)
     erubi (1.13.1)
     et-orbi (1.2.11)
@@ -213,6 +217,18 @@ GEM
     json (2.10.1)
     jwt (2.10.1)
       base64
+    kaminari (1.2.2)
+      activesupport (>= 4.1.0)
+      kaminari-actionview (= 1.2.2)
+      kaminari-activerecord (= 1.2.2)
+      kaminari-core (= 1.2.2)
+    kaminari-actionview (1.2.2)
+      actionview
+      kaminari-core (= 1.2.2)
+    kaminari-activerecord (1.2.2)
+      activerecord
+      kaminari-core (= 1.2.2)
+    kaminari-core (1.2.2)
     kramdown (2.5.1)
       rexml (>= 3.3.9)
     language_server-protocol (3.17.0.4)
@@ -446,10 +462,12 @@ DEPENDENCIES
   capybara
   debug
   devise
+  dotenv-rails
   google-cloud-storage
   image_processing
   importmap-rails
   jbuilder
+  kaminari
   kramdown
   lograge
   logstash-event

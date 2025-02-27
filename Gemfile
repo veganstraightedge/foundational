@@ -13,21 +13,23 @@ gem 'pg'
 # webserver
 gem 'puma'
 
-
 # auth
 gem 'cancancan'
 gem 'devise'
 gem 'rolify'
 
 # assets
-gem 'propshaft'
 gem 'importmap-rails'
-gem 'turbo-rails'
+gem 'propshaft'
 gem 'stimulus-rails'
+gem 'turbo-rails'
 # TODO: TBD as a part of assets
 # gem 'autoprefixer-rails' # for bootstrap
 # gem 'bootstrap'
 # gem 'sassc-rails'
+
+# pagination
+gem 'kaminari'
 
 # JSON views
 gem 'jbuilder'
@@ -54,6 +56,9 @@ gem 'image_processing'
 # background jobs and cache in the database
 gem 'solid_cache'
 gem 'solid_queue'
+
+# environment variables
+gem 'dotenv-rails'
 
 group :development, :test do
   gem 'debug', platforms: %i[ mri windows ], require: 'debug/prelude'
