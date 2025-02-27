@@ -1,11 +1,4 @@
-require 'sidekiq/web'
-
 Rails.application.routes.draw do
-  # sidekiq dashboard
-  authenticate :user, ->(user) { user.has_role? :admin } do
-    mount Sidekiq::Web => '/sidekiq'
-  end
-
   # homepage
   root to: 'home#index'
 
