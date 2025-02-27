@@ -11,7 +11,9 @@
 /.bundle
 
 # Ignore all environment files.
-/.env*
+/.env.production
+/.env.staging
+/.env.test
 
 # Ignore all logfiles and tempfiles.
 /log/*
