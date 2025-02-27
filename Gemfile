@@ -3,9 +3,9 @@ source 'https://rubygems.org'
 ruby file: '.ruby-version'
 
 # app server
-gem 'rails'
 gem 'bootsnap', require: false
 gem 'rack-timeout', group: :production
+gem 'rails'
 
 # database
 gem 'pg'
@@ -59,7 +59,7 @@ gem 'solid_queue'
 gem 'dotenv-rails'
 
 group :development, :test do
-  gem 'debug', platforms: %i[ mri windows ], require: 'debug/prelude'
+  gem 'debug', platforms: %i[mri windows], require: 'debug/prelude'
 
   gem 'brakeman', require: false # security static analysis
   gem 'rubocop',  require: false # linter
