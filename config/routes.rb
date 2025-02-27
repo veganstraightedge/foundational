@@ -1,14 +1,42 @@
+require 'sidekiq/web'
+
 Rails.application.routes.draw do
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  # sidekiq dashboard
+  authenticate :user, ->(user) { user.has_role? :admin } do
+    mount Sidekiq::Web => '/sidekiq'
+  end
 
-  # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
-  # Can be used by load balancers and uptime monitors to verify that the app is live.
-  get "up" => "rails/health#show", as: :rails_health_check
+  # homepage
+  root to: 'home#index'
 
-  # Render dynamic PWA files from app/views/pwa/* (remember to link manifest in application.html.erb)
-  # get "manifest" => "rails/pwa#manifest", as: :pwa_manifest
-  # get "service-worker" => "rails/pwa#service_worker", as: :pwa_service_worker
+  # main resources
+  get '@:username', to: 'users#show', as: :profile
 
-  # Defines the root path route ("/")
-  # root "posts#index"
+  resources :categories, only: %i[index show]
+  resources :tags,       only: %i[index show]
+
+  # auth
+  devise_for :users
+
+  devise_scope :user do
+    get 'signup',  to: 'devise/registrations#new'
+    get 'signin',  to: 'devise/sessions#new'
+    get 'signout', to: 'devise/sessions#destroy'
+
+    get 'account', to: 'devise/registrations#edit'
+  end
+
+  # admin
+  namespace :admin do
+    resources :users
+    resources :tags
+    resources :taggings
+    resources :categories
+    resources :categorizations
+
+    root to: 'users#index'
+  end
+
+  # admin site settings
+  resources :settings, only: %i[index edit update]
 end
