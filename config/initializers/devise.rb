@@ -13,7 +13,7 @@ Devise.setup do |config|
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
   # TODO: read this from an ENV var
-  # config.pepper =
+  # config.secret_key =
   #   'c219f6e21f91559681da1ffd3f9e54915f3cc30b09c7ba65b
   #    9acf83fc58909452f7e37227f39926fb428e1082c552fa
   #    0a85a37f665c92dbbcec571754067c2c2'.squish.tr(' ', '')
@@ -180,7 +180,6 @@ Devise.setup do |config|
 
   # Options to be passed to the created cookie. For instance, you can set
   # secure: true in order to force SSL only cookies.
-  # Default is {}
   config.rememberable_options = { secure: true }
 
   # ==> Configuration for :validatable
@@ -215,7 +214,7 @@ Devise.setup do |config|
   # config.unlock_strategy = :both
 
   # Number of authentication tries before locking an account if lock_strategy
-  # is failed attempts. Default is 20
+  # is failed attempts.
   config.maximum_attempts = 10
 
   # Time interval to unlock the account if :time is enabled as unlock_strategy.
@@ -264,14 +263,14 @@ Devise.setup do |config|
 
   # ==> Navigation configuration
   # Lists the formats that should be treated as navigational. Formats like
-  # :html, should redirect to the sign in page when the user does not have
+  # :html should redirect to the sign in page when the user does not have
   # access, but formats like :xml or :json, should return 401.
   #
   # If you have any extra navigational formats, like :iphone or :mobile, you
   # should add them to the navigational formats lists.
   #
   # The "*/*" below is required to match Internet Explorer requests.
-  # config.navigational_formats = ['*/*', :html]
+  # config.navigational_formats = ['*/*', :html, :turbo_stream]
 
   # The default HTTP method used to sign out a resource. Default is :delete.
   config.sign_out_via = :delete
@@ -304,13 +303,14 @@ Devise.setup do |config|
   # so you need to do it manually. For the users scope, it would be:
   # config.omniauth_path_prefix = '/my_engine/users/auth'
 
-  # ==> Turbolinks configuration
-  # If your app is using Turbolinks, Turbolinks::Controller needs to be included to make redirection work correctly:
-  #
-  # TODO: Where does this go??
-  # ActiveSupport.on_load(:devise_failure_app) do
-  #   include Turbolinks::Controller
-  # end
+  # ==> Hotwire/Turbo configuration
+  # When using Devise with Hotwire/Turbo, the http status for error responses
+  # and some redirects must match the following. The default in Devise for existing
+  # apps is `200 OK` and `302 Found` respectively, but new apps are generated with
+  # these new defaults that match Hotwire/Turbo behavior.
+  # Note: These might become the new default in future versions of Devise.
+  config.responder.error_status = :unprocessable_entity
+  config.responder.redirect_status = :see_other
 
   # ==> Configuration for :registerable
 
