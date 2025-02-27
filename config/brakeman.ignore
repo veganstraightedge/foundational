@@ -1,0 +1,139 @@
+{
+  "ignored_warnings": [
+    {
+      "warning_type": "Cross-Site Scripting",
+      "warning_code": 2,
+      "fingerprint": "54479a3ed73e70bdaa048fea6d2779033be0bbb628e74a7f529a338e8565532c",
+      "check_name": "CrossSiteScripting",
+      "message": "Unescaped model attribute",
+      "file": "app/views/settings/edit.html.erb",
+      "line": 16,
+      "link": "https://brakemanscanner.org/docs/warning_types/cross_site_scripting",
+      "code": "Markdown.render(Setting.find(params[:id]).description)",
+      "render_path": [
+        {
+          "type": "controller",
+          "class": "SettingsController",
+          "method": "edit",
+          "line": 14,
+          "file": "app/controllers/settings_controller.rb",
+          "rendered": {
+            "name": "settings/edit",
+            "file": "app/views/settings/edit.html.erb"
+          }
+        }
+      ],
+      "location": {
+        "type": "template",
+        "template": "settings/edit"
+      },
+      "user_input": null,
+      "confidence": "Medium",
+      "cwe_id": [
+        79
+      ],
+      "note": ""
+    },
+    {
+      "warning_type": "Cross-Site Scripting",
+      "warning_code": 2,
+      "fingerprint": "5643667d6ef04163e8903a14693c8d231faa2848b3fba25d24dc800240332939",
+      "check_name": "CrossSiteScripting",
+      "message": "Unescaped model attribute",
+      "file": "app/views/layouts/_alerts.html.erb",
+      "line": 8,
+      "link": "https://brakemanscanner.org/docs/warning_types/cross_site_scripting",
+      "code": "Markdown.render(notice)",
+      "render_path": [
+        {
+          "type": "template",
+          "name": "layouts/application",
+          "line": 20,
+          "file": "app/views/layouts/application.html.erb",
+          "rendered": {
+            "name": "layouts/_alerts",
+            "file": "app/views/layouts/_alerts.html.erb"
+          }
+        }
+      ],
+      "location": {
+        "type": "template",
+        "template": "layouts/_alerts"
+      },
+      "user_input": null,
+      "confidence": "Medium",
+      "cwe_id": [
+        79
+      ],
+      "note": ""
+    },
+    {
+      "warning_type": "Cross-Site Scripting",
+      "warning_code": 2,
+      "fingerprint": "744563f0cb0d488f14cc578b072b22ea9635bd531d76749e294703857ab0c08c",
+      "check_name": "CrossSiteScripting",
+      "message": "Unescaped model attribute",
+      "file": "app/views/settings/index.html.erb",
+      "line": 22,
+      "link": "https://brakemanscanner.org/docs/warning_types/cross_site_scripting",
+      "code": "Markdown.render(setting.description)",
+      "render_path": [
+        {
+          "type": "controller",
+          "class": "SettingsController",
+          "method": "index",
+          "line": 10,
+          "file": "app/controllers/settings_controller.rb",
+          "rendered": {
+            "name": "settings/index",
+            "file": "app/views/settings/index.html.erb"
+          }
+        }
+      ],
+      "location": {
+        "type": "template",
+        "template": "settings/index"
+      },
+      "user_input": null,
+      "confidence": "Medium",
+      "cwe_id": [
+        79
+      ],
+      "note": ""
+    },
+    {
+      "warning_type": "Cross-Site Scripting",
+      "warning_code": 2,
+      "fingerprint": "924f138f8e06550bd30c1cbefbc5b5b039ed5fd138731085e4a84a0d58eef117",
+      "check_name": "CrossSiteScripting",
+      "message": "Unescaped model attribute",
+      "file": "app/views/layouts/_alerts.html.erb",
+      "line": 16,
+      "link": "https://brakemanscanner.org/docs/warning_types/cross_site_scripting",
+      "code": "Markdown.render(alert)",
+      "render_path": [
+        {
+          "type": "template",
+          "name": "layouts/application",
+          "line": 20,
+          "file": "app/views/layouts/application.html.erb",
+          "rendered": {
+            "name": "layouts/_alerts",
+            "file": "app/views/layouts/_alerts.html.erb"
+          }
+        }
+      ],
+      "location": {
+        "type": "template",
+        "template": "layouts/_alerts"
+      },
+      "user_input": null,
+      "confidence": "Medium",
+      "cwe_id": [
+        79
+      ],
+      "note": ""
+    }
+  ],
+  "brakeman_version": "7.0.0"
+}
