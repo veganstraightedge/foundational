@@ -1,0 +1,35 @@
+<div class='container'>
+  <h2 class='display-3'>
+    Site Settings
+  </h2>
+
+  <div class='row mt-5'>
+    <div class='col-12 col-md-5 col-lg-3'>
+      <%= render 'nav', grouped_settings: @grouped_settings %>
+    </div><!-- .col -->
+
+    <div class='col-12 col-md-7 col-lg-9'>
+      <% @grouped_settings.each do |group, settings| %>
+        <h2>
+          <%= icon_tag icon_for_settings_group(group), class: "text-secondary align-bottom mr-1x mb-1" %>
+          <%= group %>
+        </h2>
+
+        <ul class='list-unstyled'>
+          <% settings.each do |setting| %>
+            <li class='pb-5'>
+              <%= link_to setting.name, [:edit, setting], class: "h4 font-weight-normal" %>
+              <div class="text-muted"><%= Markdown.render(setting.description).html_safe %></div>
+
+              <% if setting.form_control == 'image_field' %>
+                <%= render 'settings/form_controls/attached_image_preview', setting: setting %>
+              <% else %>
+                <p><code class='h5 font-weight-bold'><%= setting.content %></code></p>
+              <% end %>
+            </li>
+          <% end %>
+        </ul>
+      <% end %>
+    </div><!-- .col -->
+  </div><!-- .row -->
+</div>

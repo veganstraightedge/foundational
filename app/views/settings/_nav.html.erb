@@ -1,0 +1,29 @@
+<nav class="mb-5">
+  <div class="h6 font-weight-bold list-group mb-3">
+    <%= link_to [:settings], class: "list-group-item list-group-item-action #{'active' if on_settings_index?}" do %>
+      <%= icon_tag :gear, class: "text-secondary align-bottom mr-1  #{'text-light' if on_settings_index?}" %>
+      All Settings
+    <% end %>
+  </div>
+
+  <% grouped_settings.each do |group, settings| %>
+    <div class="list-group mb-3">
+      <p class="font-weight-bold list-group-item m-0">
+        <%= icon_tag icon_for_settings_group(group), class: "mb-1 mr-1" %>
+        <%= group %>
+      </p>
+
+      <% settings.each do |setting| %>
+        <%= link_to [:edit, setting], class: "list-group-item list-group-item-action #{'active' if on_setting? setting}" do %>
+          <%= setting.name %>
+
+          <% if setting.requires_update? %>
+            <br>
+            <span class="badge badge-danger badge-pill">Update Required</span>
+          <% end %>
+        <% end %>
+      <% end %>
+
+    </div>
+  <% end %>
+</nav>
