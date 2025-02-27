@@ -1,0 +1,45 @@
+{
+  "name": "Foundational",
+  "description": "A Ruby on Rails app to build a CMS on top of",
+  "keywords": [
+    "cms",
+    "publishing",
+    "rubyonrails",
+    "rails",
+    "template"
+  ],
+
+  "website": "https://github.com/veganstraightedge/foundational",
+  "repository": "https://github.com/veganstraightedge/foundational",
+  "success_url": "/signup",
+
+  "scripts": {
+    "postdeploy": "bundle exec rake db:migrate && bundle exec rake db:seed"
+  },
+
+  "env": {
+    "SECRET_KEY_BASE": {
+      "description": "This gets generated",
+      "generator":   "secret"
+    },
+
+    "MIN_THREADS": "1",
+    "MAX_THREADS": "1",
+  },
+
+  "addons": [
+    "heroku-postgresql:essential-0",
+  ],
+
+  "stack": "heroku-24",
+
+  "environments": {
+    "test": {
+      "buildpacks": [
+        { "url": "heroku/ruby" },
+        { "url": "heroku/heroku-buildpack-activestorage-preview" }
+        { "url": "heroku-community/apt" }
+      ]
+    }
+  }
+}
