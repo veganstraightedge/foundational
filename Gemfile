@@ -38,10 +38,8 @@ gem 'jbuilder'
 gem 'kramdown' # for markdown
 gem 'sterile'  # for slugs
 
-# TODO: TBD
 # admin
-# gem 'administrate'
-# https://administrate-demo.herokuapp.com
+gem 'administrate', '~> 1.0.0.beta3'
 
 # observability
 gem 'lograge'
