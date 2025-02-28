@@ -19,12 +19,13 @@ gem 'devise'
 gem 'rolify'
 
 # assets
+gem 'bootstrap-icons-helper'
 gem 'importmap-rails'
 gem 'propshaft'
 gem 'stimulus-rails'
 gem 'turbo-rails'
+
 # TODO: TBD as a part of assets
-# gem 'autoprefixer-rails' # for bootstrap
 # gem 'bootstrap'
 # gem 'sassc-rails'
 
