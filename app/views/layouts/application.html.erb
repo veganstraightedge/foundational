@@ -1,24 +1,36 @@
 <!DOCTYPE html>
 <%= tag.html lang: setting_for_site_locale do %>
-  <%= tag.head do %>
+  <head>
     <title><%= setting_for_page_title %></title>
+
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%# Meta tags requried for Bootstrap %>
+    <%# Meta tags required for Bootstrap %>
     <meta charset='utf-8'>
     <meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no'>
 
-    <%# Stylesheets %>
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%# Javascripts, turbolinks needs to be in the <head>, not <body> %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-  <% end %>
+    <%# Meta tags for progressive web apps %>
+    <meta content='yes' name='apple-mobile-web-app-capable'>
+    <meta content='yes' name='mobile-web-app-capable'>
+    <% if false %>
+      <%# Enable PWA manifest for installable apps (make sure to enable in config/routes.rb too!) %>
+      <link rel='manifest' href='<%= pwa_manifest_path format: :json %>'>
+    <% end %>
 
-  <%= tag.body do %>
+    <link rel='icon' href='/icon.png' type='image/png'>
+    <link rel='icon' href='/icon.svg' type='image/svg+xml'>
+    <link rel='apple-touch-icon' href='/icon.png'>
+
+    <%# Includes all stylesheet files in app/assets/stylesheets %>
+    <%= stylesheet_link_tag :app, 'data-turbo-track': 'reload' %>
+    <%= javascript_importmap_tags %>
+  </head>
+
+  <body>
     <%= render 'layouts/nav' %>
     <%= render 'layouts/alerts' %>
 
     <%= yield %>
-  <% end %>
+  </body>
 <% end %>
