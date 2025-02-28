@@ -1,7 +1,11 @@
 <% autofocus   ||= false %>
 <% placeholder ||= nil %>
 
-<div class="form-group">
-  <%= form.label       name %>
-  <%= form.email_field name, autofocus: autofocus, autocomplete: "email", placeholder: placeholder, class: "form-control form-control-lg" %>
+<div class='mb-3'>
+  <%= form.label       name, class: 'form-label' %>
+  <%= form.email_field name,
+                       autofocus:    autofocus,
+                       autocomplete: 'email',
+                       placeholder:  placeholder,
+                       class:        'form-control form-control-lg' %>
 </div>

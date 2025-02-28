@@ -2,58 +2,58 @@
   <%= tag.div class: wrapper_row_classes do %>
     <%= tag.div class: wrapper_columns_classes do %>
 
-    <h2 class="display-3">Account Settings</h2>
+      <h2 class='display-3'>Account Settings</h2>
 
-    <%= form_for resource, as: resource_name, url: registration_path(resource_name), html: { method: :put } do |form| %>
-      <%= render "devise/shared/error_messages", resource: resource %>
+      <%= form_for resource, as: resource_name, url: registration_path(resource_name), html: { method: :put } do |form| %>
+        <%= render 'devise/shared/error_messages', resource: resource %>
 
-      <%= render "devise/shared/labeled_email_field", form: form, name: :email %>
+        <%= render 'devise/shared/labeled_email_field', form: form, name: :email %>
 
-      <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-        <div class="alert alert-warning">
-          Currently waiting confirmation for:
-          <b><%= resource.unconfirmed_email %></b>.
+        <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+          <div class='alert alert-warning'>
+            Currently waiting confirmation for:
+            <b><%= resource.unconfirmed_email %></b>.
+          </div>
+        <% end %>
+
+        <%= render 'devise/shared/labeled_password_field',
+                    form:  form,
+                    name:  :password,
+                    label: 'New password',
+                    note:  "Leave blank if you don’t want to change it. <b>#{@minimum_password_length} characters minimum</b>" %>
+
+        <%= render 'devise/shared/labeled_password_field',
+                    form:  form,
+                    name:  :password_confirmation,
+                    label: 'Confirm new password' %>
+
+        <%= render 'devise/shared/labeled_password_field',
+                    form:         form,
+                    name:         :current_password,
+                    autocomplete: 'current-password',
+                    note:         'We need your current password to confirm your changes.' %>
+
+        <div class='actions'>
+          <%= form.submit 'Save', class: 'btn btn-primary btn-lg' %>
+        </div>
+
+        <div class='pt-5 border-top'>
+          <div class='card border-danger my-5'>
+            <div class='card-header bg-danger text-white h6'>The Danger Zone™</div>
+
+            <div class='card-body text-danger'>
+              <h5 class='card-title'>Want to cancel your account?</h5>
+              <p class='card-text'>You can do cancel your account at anytime.</p>
+
+              <%= button_to 'Cancel my account',
+                            registration_path(resource_name),
+                            { data: { turbo_confirm: 'Are you sure you’re sure? There is NO UNDO.', turbo_method: :delete },
+                            class: 'btn btn-outline-danger' } %>
+            </div>
+          </div>
         </div>
       <% end %>
 
-      <%= render "devise/shared/labeled_password_field",
-                  form: form,
-                  name: :password,
-                  label: "New password",
-                  note: "Leave blank if you don't want to change it. <b>#{@minimum_password_length} characters minimum</b>" %>
-
-      <%= render "devise/shared/labeled_password_field",
-                  form: form,
-                  name: :password_confirmation,
-                  label: "Confirm new password" %>
-
-      <%= render "devise/shared/labeled_password_field",
-                  form:         form,
-                  name:         :current_password,
-                  autocomplete: "current-password",
-                  note:         "We need your current password to confirm your changes." %>
-
-      <div class="actions">
-        <%= form.submit "Save" %>
-      </div>
-
-      <div class="pt-5 border-top">
-        <div class="card border-danger my-5">
-          <div class="card-header bg-danger text-white h6">The Danger Zone™</div>
-
-          <div class="card-body text-danger">
-            <h5 class="card-title">Want to cancel your account?</h5>
-            <p class="card-text">You can do cancel your account at anytime.</p>
-
-            <%= button_to "Cancel my account",
-                          registration_path(resource_name),
-                          { data: { turbo_confirm: "Are you sure you’re sure? There is NO UNDO.", turbo_method: :delete },
-                          class: "btn btn-outline-danger" } %>
-          </div>
-        </div>
-      </div>
     <% end %>
-
-  <% end %>
   <% end %>
 </div><!-- .container -->

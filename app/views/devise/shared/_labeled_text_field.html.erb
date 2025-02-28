@@ -1,7 +1,7 @@
 <% autofocus   ||= false %>
 <% placeholder ||= nil %>
 
-<div class="form-group">
-  <%= form.label      name %>
+<div class="mb-3">
+  <%= form.label      name, class: 'form-label' %>
   <%= form.text_field name, autofocus: autofocus, placeholder: placeholder, class: "form-control form-control-lg" %>
 </div>

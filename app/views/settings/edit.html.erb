@@ -17,7 +17,7 @@
       </div>
 
       <%= form_with model: @setting, local: true do |form| %>
-        <div class='form-group'>
+        <div class='mb-3'>
           <%= render 'settings/form_controls/attached_image_preview', setting: @setting %>
 
           <%= render "settings/form_controls/#{@setting.form_control}", form: form %>

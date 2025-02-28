@@ -2,29 +2,29 @@
   <%= tag.div class: wrapper_row_classes do %>
     <%= tag.div class: wrapper_columns_classes do %>
 
-    <h2 class="display-3">Change your password</h2>
+      <h2 class='display-3'>Change your password</h2>
 
-    <%= form_for resource, as: resource_name, url: password_path(resource_name), html: { method: :put } do |form| %>
-      <%= render "devise/shared/error_messages", resource: resource %>
-      <%= form.hidden_field :reset_password_token %>
+      <%= form_for resource, as: resource_name, url: password_path(resource_name), html: { method: :put } do |form| %>
+        <%= render 'devise/shared/error_messages', resource: resource %>
+        <%= form.hidden_field :reset_password_token %>
 
-      <%= render "devise/shared/labeled_password_field",
-                  form: form,
-                  name: :password,
-                  label: "New password",
-                  note: "#{@minimum_password_length} characters minimum" %>
+        <%= render 'devise/shared/labeled_password_field',
+                    form:  form,
+                    name:  :password,
+                    label: 'New password',
+                    note:  "#{@minimum_password_length} characters minimum" %>
 
-      <%= render "devise/shared/labeled_password_field",
-                  form: form,
-                  name: :password_confirmation,
-                  label: "Confirm new password" %>
+        <%= render 'devise/shared/labeled_password_field',
+                    form:  form,
+                    name:  :password_confirmation,
+                    label: 'Confirm new password' %>
 
-      <div class="actions">
-        <%= form.submit "Save password →" %>
-      </div>
-    <% end %>
+        <div class='actions'>
+          <%= form.submit 'Save password →', class: 'btn btn-primary btn-lg' %>
+        </div>
+      <% end %>
 
-    <%= render "devise/shared/links" %>
+      <%= render 'devise/shared/links' %>
 
     <% end %>
   <% end %>
