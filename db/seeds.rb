@@ -1,3 +1,8 @@
+# Workaround for Devise > 5 error:
+#   Could not find a valid mapping for #<User
+#   https://github.com/heartcombo/devise/issues/5705
+Rails.application.reload_routes_unless_loaded
+
 Rails.logger.debug '==> Seeding…'
 
 if Rails.env.development?
