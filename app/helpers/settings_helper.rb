@@ -1,9 +1,9 @@
 module SettingsHelper
   SETTINGS_GROUP_ICON_MAP = {
-    authentication: :lock_fill,
+    authentication: :lock,
     branding:       :image,
     localization:   :globe,
-    profiles:       :person_fill
+    profiles:       :person
   }.freeze
 
   def icon_for_settings_group name
