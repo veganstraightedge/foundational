@@ -3,10 +3,10 @@
 #   https://github.com/heartcombo/devise/issues/5705
 Rails.application.reload_routes_unless_loaded
 
-Rails.logger.debug '==> Seeding…'
+Rails.logger.info '==> Seeding…'
 
 if Rails.env.development?
-  Rails.logger.debug '==> Creating default admin user…'
+  Rails.logger.info '==> Creating default admin user…'
   admin_user = User.create! username:              'admin',
                             email:                 'admin@example.com',
                             password:              'admin@example.com',
@@ -18,7 +18,7 @@ if Rails.env.development?
   # Add the admin role to the admin user
   admin_user.add_role :admin
 
-  Rails.logger.debug '==> Creating default moderator user…'
+  Rails.logger.info '==> Creating default moderator user…'
   moderator_user = User.create! username:              'moderator',
                                 email:                 'moderator@example.com',
                                 password:              'moderator@example.com',
@@ -30,7 +30,7 @@ if Rails.env.development?
   # Add the moderator role to the moderator user
   moderator_user.add_role :moderator
 
-  Rails.logger.debug '==> Creating default contributor user…'
+  Rails.logger.info '==> Creating default contributor user…'
   contributor_user = User.create! username:              'contributor',
                                   email:                 'contributor@example.com',
                                   password:              'contributor@example.com',
@@ -43,7 +43,7 @@ if Rails.env.development?
 end
 
 # Settings
-Rails.logger.debug '==> Creating required Settings with default content…'
+Rails.logger.info '==> Creating required Settings with default content…'
 
 # Localization
 Setting.create! name:            'Default Locale',
@@ -131,4 +131,4 @@ Setting.create! name:            'Website Header Image',
                 default_content: nil,
                 form_control:    'image_field'
 
-Rails.logger.debug '==> Seeding… complete.'
+Rails.logger.info '==> Seeding… complete.'
