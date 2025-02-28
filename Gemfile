@@ -56,10 +56,14 @@ gem 'solid_queue'
 # environment variables
 gem 'dotenv-rails'
 
+# network utilities
+gem 'down'
+gem 'http'
+
 group :development, :test do
   gem 'debug', platforms: %i[mri windows], require: 'debug/prelude'
 
-  gem 'brakeman', require: false # security static analysis
+  gem 'brakeman',         require: false # security static analysis
   gem 'rubocop',          require: false # linter
   gem 'rubocop-capybara', require: false # linter
   gem 'rubocop-rails',    require: false # linter

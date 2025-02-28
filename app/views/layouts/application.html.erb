@@ -22,14 +22,6 @@
     <link rel='icon' href='/icon.svg' type='image/svg+xml'>
     <link rel='apple-touch-icon' href='/icon.png'>
 
-    <%# INFO: Update this instead of the bootstrap gem when new versions come out %>
-    <%# NOTE: Pull this in as static local file at /vendor/assets/stylesheets/bootstrap.css %>
-    <%# TODO: create a rake task to automate that %>
-    <% bootstrap_major_version = 5 %>
-    <% bootstrap_minor_version = 3 %>
-    <% bootstrap_patch_version = 3 %>
-    <% "https://cdn.jsdelivr.net/npm/bootstrap@#{bootstrap_major_version}.#{bootstrap_minor_version}.#{bootstrap_patch_version}/dist/css/bootstrap.css" %>
-
     <%# Loaded from /vendor/assets/stylesheets/bootstrap.css, update it using the above guidance %>
     <%= stylesheet_link_tag 'bootstrap.css', "data-turbo-track": "reload" %>
 
