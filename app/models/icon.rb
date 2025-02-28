@@ -1,3 +1,4 @@
+# TODO: move to /lib, because it's not business logic, it's generic subdomain/"upstreamable"
 class Icon
   attr_reader :slug, :options
 
@@ -23,6 +24,7 @@ class Icon
   private
 
   def file
+    # TODO: update this approach to use bootstrap gem instead
     File.read("node_modules/bootstrap-icons/icons/#{slug}.svg")
   end
 

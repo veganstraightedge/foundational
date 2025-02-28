@@ -28,6 +28,7 @@ class Setting < ApplicationRecord
   end
 
   def generate_slug
+    # TODO: use .to_slug here?
     self.slug = name.downcase
   end
 

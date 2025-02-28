@@ -1,3 +1,4 @@
+# TODO: move to /lib, because it's not business logic, it's generic subdomain/"upstreamable"
 class Markdown
   class << self
     def render text
