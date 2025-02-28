@@ -25,10 +25,6 @@ gem 'propshaft'
 gem 'stimulus-rails'
 gem 'turbo-rails'
 
-# TODO: TBD as a part of assets
-# gem 'bootstrap'
-# gem 'sassc-rails'
-
 # pagination
 gem 'kaminari'
 

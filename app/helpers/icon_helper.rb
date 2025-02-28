@@ -3,7 +3,7 @@ module IconHelper
     if setting_for_brand_image.present?
       image_tag setting_for_brand_image, size: '30x30', class: 'd-inline-block align-bottom mr-1', loading: 'lazy'
     else
-      icon_tag :map, size: '100x100', class: 'd-inline-block align-top mr-1', loading: 'lazy', fill: '#444'
+      icon_tag :map, size: '30x30', class: 'd-inline-block align-top mr-1', loading: 'lazy', fill: '#444'
     end
   end
 
