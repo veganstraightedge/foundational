@@ -1,15 +1,15 @@
-<nav class="mb-5">
-  <div class="h6 font-weight-bold list-group mb-3">
-    <%= link_to [:settings], class: "list-group-item list-group-item-action #{'active' if on_settings_index?}" do %>
+<nav class='mb-5'>
+  <div class='h6 font-weight-bold list-group mb-3'>
+    <%= link_to :settings, class: "list-group-item list-group-item-action #{'active' if on_settings_index?}" do %>
       <%= icon_tag :gear, size: '24x24', class: "text-secondary align-bottom me-1 #{'text-light' if on_settings_index?}" %>
       All Settings
     <% end %>
   </div>
 
   <% grouped_settings.each do |group, settings| %>
-    <div class="list-group mb-3">
-      <p class="font-weight-bold list-group-item m-0">
-        <%= icon_tag icon_for_settings_group(group), size: '24x24', class: "mb-1 me-1" %>
+    <div class='list-group mb-3'>
+      <p class='font-weight-bold list-group-item m-0'>
+        <%= icon_tag icon_for_settings_group(group), size: '24x24', class: 'mb-1 me-1' %>
         <%= group %>
       </p>
 
@@ -19,11 +19,10 @@
 
           <% if setting.requires_update? %>
             <br>
-            <span class="badge bg-danger badge-pill">Update Required</span>
+            <span class='badge bg-danger badge-pill'>Update Required</span>
           <% end %>
         <% end %>
       <% end %>
-
     </div>
   <% end %>
 </nav>
