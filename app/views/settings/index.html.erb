@@ -12,19 +12,19 @@
       <% @grouped_settings.each do |group, settings| %>
 
         <div class='card mb-5'>
-          <div class="card-header">
+          <div class='card-header'>
             <h2>
-              <%= icon_tag icon_for_settings_group(group), class: "text-secondary align-bottom me-1x mb-1" %>
+              <%= icon_tag icon_for_settings_group(group), class: 'text-secondary align-bottom me-1x mb-1' %>
               <%= group %>
             </h2>
           </div><!-- .card-header -->
 
-          <div class="card-body">
+          <div class='card-body'>
             <ul class='list-unstyled'>
               <% settings.each_with_index do |setting, index| %>
                 <li class='<%= 'pb-4' unless settings.length == index + 1 %>'>
-                  <%= link_to setting.name, [:edit, setting], class: "h4 font-weight-normal" %>
-                  <div class="text-muted"><%= Markdown.render(setting.description).html_safe %></div>
+                  <%= link_to setting.name, [:edit, setting], class: 'h4 font-weight-normal' %>
+                  <div class='text-muted'><%= Markdown.render(setting.description).html_safe %></div>
 
                   <% if setting.form_control == 'image_field' %>
                     <%= render 'settings/form_controls/attached_image_preview', setting: setting %>
