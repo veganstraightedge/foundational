@@ -9,6 +9,10 @@ module IconHelper
 
   def icon_tag name, options = {}
     width, height = options[:size].split('x') if options[:size].present?
+
+    width  ||= 30
+    height ||= 30
+
     options.merge! width: width, height: height
 
     # using bootstrap-icons-helper gem
