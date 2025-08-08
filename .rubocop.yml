@@ -1,10 +1,8 @@
 inherit_from: .rubocop_todo.yml
 
 plugins:
-  - rubocop-rails
-
-require:
   - rubocop-capybara
+  - rubocop-rails
 
 AllCops:
   NewCops: enable
