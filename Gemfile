@@ -43,7 +43,7 @@ gem 'lograge'
 gem 'logstash-event'
 
 # uploads using Active Storage
-gem 'aws-sdk-s3',           require: false
+gem 'aws-sdk-s3', require: false
 gem 'image_processing'
 
 # gem 'azure-storage',        require: false # uncomment if using this or mirror
@@ -84,4 +84,4 @@ group :production do
 end
 
 # windows development
-gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
+gem 'tzinfo-data', platforms: %i[windows jruby]
