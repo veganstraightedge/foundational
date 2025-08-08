@@ -11,6 +11,8 @@ AllCops:
     - db/cache_schema.rb
     - db/queue_schema.rb
     - bin/*
+    - vendor/**/*
+    - vendor/*
 
 Layout/HashAlignment:
   EnforcedHashRocketStyle: table
