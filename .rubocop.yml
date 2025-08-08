@@ -1,8 +1,8 @@
-# inherit_from: .rubocop_todo.yml
+inherit_from: .rubocop_todo.yml
 
 plugins:
   - rubocop-capybara
-  # - rubocop-rails
+  - rubocop-rails
 
 AllCops:
   NewCops: enable
@@ -26,9 +26,9 @@ Metrics/MethodLength:
   Exclude:
     - db/migrate/*
 
-# Rails/SkipsModelValidations:
-#   Exclude:
-#     - db/migrate/*.active_storage.rb
+Rails/SkipsModelValidations:
+  Exclude:
+    - db/migrate/*.active_storage.rb
 
 Style/Documentation:
   Enabled: false
