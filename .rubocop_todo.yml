@@ -11,30 +11,29 @@
 # AllowedMethods: refine
 Metrics/BlockLength:
   Max: 26
-
 # Offense count: 1
 # Configuration parameters: Include.
 # Include: app/models/**/*.rb
-Rails/HasAndBelongsToMany:
-  Exclude:
-    - "app/models/role.rb"
+# Rails/HasAndBelongsToMany:
+#   Exclude:
+#     - "app/models/role.rb"
 
-# Offense count: 1
-# Configuration parameters: Include.
-# Include: app/helpers/**/*.rb
-Rails/HelperInstanceVariable:
-  Exclude:
-    - "app/helpers/settings_helper.rb"
+# # Offense count: 1
+# # Configuration parameters: Include.
+# # Include: app/helpers/**/*.rb
+# Rails/HelperInstanceVariable:
+#   Exclude:
+#     - "app/helpers/settings_helper.rb"
 
-# Offense count: 4
-Rails/OutputSafety:
-  Exclude:
-    - "app/helpers/settings_helper.rb"
-    - "app/models/markdown.rb"
+# # Offense count: 4
+# Rails/OutputSafety:
+#   Exclude:
+#     - "app/helpers/settings_helper.rb"
+#     - "app/models/markdown.rb"
 
-# Offense count: 1
-# Configuration parameters: Include.
-# Include: db/**/*.rb
-Rails/ThreeStateBooleanColumn:
-  Exclude:
-    - "db/migrate/20200627051302_create_settings.rb"
+# # Offense count: 1
+# # Configuration parameters: Include.
+# # Include: db/**/*.rb
+# Rails/ThreeStateBooleanColumn:
+#   Exclude:
+#     - "db/migrate/20200627051302_create_settings.rb"

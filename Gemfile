@@ -61,8 +61,8 @@ gem 'down'
 gem 'http'
 
 group :development, :test do
-  gem 'debug', platforms: %i[mri windows], require: 'debug/prelude'
   gem 'brakeman',         require: false # security static analysis
+  gem 'debug', platforms: %i[mri windows], require: 'debug/prelude'
   gem 'erb_lint',         require: false # linter
   gem 'rubocop',          require: false # linter
   gem 'rubocop-capybara', require: false # linter
