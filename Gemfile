@@ -20,6 +20,9 @@ gem 'propshaft'
 gem 'stimulus-rails'
 gem 'turbo-rails'
 
+# authentication
+gem 'bcrypt'
+
 # pagination
 gem 'kaminari'
 
@@ -37,9 +40,6 @@ gem 'logstash-event'
 # uploads using Active Storage
 gem 'aws-sdk-s3', require: false
 gem 'image_processing'
-
-# gem 'azure-storage',        require: false # uncomment if using this or mirror
-# gem 'google-cloud-storage', require: false # uncomment if using this or mirror
 
 # background jobs and cache in the database
 gem 'solid_cache'
@@ -79,5 +79,3 @@ end
 
 # windows development
 gem 'tzinfo-data', platforms: %i[windows jruby]
-
-gem "bcrypt", "~> 3.1"

@@ -1,8 +1,9 @@
 class RegistrationsController < ApplicationController
   allow_unauthenticated_access
-  rate_limit to: 5, within: 1.hour, only: :create, with: lambda {
-    redirect_to new_registration_url, alert: 'Try again later.'
-  }
+  rate_limit to:     5,
+             within: 1.hour,
+             only:   :create,
+             with:   -> { redirect_to new_registration_url, alert: 'Try again later.' }
 
   def new
     @user = User.new
@@ -22,6 +23,6 @@ class RegistrationsController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:email_address, :password, :password_confirmation)
+    params.expect(user: %i[name username email_address password password_confirmation])
   end
 end
