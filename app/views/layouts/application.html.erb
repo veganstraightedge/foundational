@@ -18,12 +18,9 @@
       <link rel='manifest' href='<%= pwa_manifest_path format: :json %>'>
     <% end %>
 
-    <link rel='icon' href='/icon.png' type='image/png'>
-    <link rel='icon' href='/icon.svg' type='image/svg+xml'>
+    <link rel='icon'             href='/icon.png' type='image/png'>
+    <link rel='icon'             href='/icon.svg' type='image/svg+xml'>
     <link rel='apple-touch-icon' href='/icon.png'>
-
-    <%# Loaded from /vendor/assets/stylesheets/bootstrap.css, update it using the above guidance %>
-    <%= stylesheet_link_tag 'bootstrap.css', "data-turbo-track": "reload" %>
 
     <% if Rails.env.development? %>
       <%# Highlight any text which doesn’t have a translation in locales YAML %>
@@ -31,7 +28,10 @@
     <% end %>
 
     <%# Includes all stylesheet files in app/assets/stylesheets %>
-    <%= stylesheet_link_tag :app, 'data-turbo-track': 'reload' %>
+    <%= bootstrap_stylesheet_link_tag %>
+    <%= stylesheet_link_tag :app, data: { turbo_track: 'reload' } %>
+
+    <%# Import all JavaScript files in app/assets/javascripts from CDN via importmap.rb %>
     <%= javascript_importmap_tags %>
 
     <%= render 'layouts/auto_dark_mode' %>
