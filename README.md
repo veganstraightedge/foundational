@@ -5,10 +5,7 @@
 - [ ] Improve Categories <> Categorizations in /admin
 - [ ] Improve Tags <> Taggings in /admin
 
-- [ ] Add titles to Devise controllers
-  - [ ] https://stackoverflow.com/questions/3546289/override-devise-registrations-controller#3553561
-
-- [ ] Can Rails app write to ENV vars
+- [ ] Can Rails app write to ENV vars?
   - [ ] AND persist those values across deploys
   - [ ] If so, /settings can update ENV vars
   - [ ] If not, write docs for how to set via browser and CLI

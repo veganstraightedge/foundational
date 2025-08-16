@@ -13,11 +13,6 @@ gem 'pg'
 # webserver
 gem 'puma'
 
-# auth
-gem 'cancancan'
-gem 'devise'
-gem 'rolify'
-
 # assets
 gem 'bootstrap-icons-helper'
 gem 'importmap-rails'
