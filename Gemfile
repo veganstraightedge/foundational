@@ -30,9 +30,6 @@ gem 'jbuilder'
 gem 'kramdown' # for markdown
 gem 'sterile'  # for slugs
 
-# admin
-gem 'administrate', '~> 1.0.0.beta3'
-
 # observability
 gem 'lograge'
 gem 'logstash-event'
