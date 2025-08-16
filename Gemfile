@@ -13,17 +13,15 @@ gem 'pg'
 # webserver
 gem 'puma'
 
-# auth
-gem 'cancancan'
-gem 'devise'
-gem 'rolify'
-
 # assets
 gem 'bootstrap-icons-helper'
 gem 'importmap-rails'
 gem 'propshaft'
 gem 'stimulus-rails'
 gem 'turbo-rails'
+
+# authentication
+gem 'bcrypt'
 
 # pagination
 gem 'kaminari'
@@ -35,9 +33,6 @@ gem 'jbuilder'
 gem 'kramdown' # for markdown
 gem 'sterile'  # for slugs
 
-# admin
-gem 'administrate', '~> 1.0.0.beta3'
-
 # observability
 gem 'lograge'
 gem 'logstash-event'
@@ -45,9 +40,6 @@ gem 'logstash-event'
 # uploads using Active Storage
 gem 'aws-sdk-s3', require: false
 gem 'image_processing'
-
-# gem 'azure-storage',        require: false # uncomment if using this or mirror
-# gem 'google-cloud-storage', require: false # uncomment if using this or mirror
 
 # background jobs and cache in the database
 gem 'solid_cache'

@@ -1,4 +1,6 @@
 class CategoriesController < ApplicationController
+  allow_unauthenticated_access
+
   def index
     @categories = Category.all
     @page_title = %w[Categories]

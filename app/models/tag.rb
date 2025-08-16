@@ -1,6 +1,4 @@
 class Tag < ApplicationRecord
-  resourcify # for rolify roles
-
   has_many :taggings, dependent: :destroy
 
   before_validation :remove_extra_spaces, on: %i[create update]

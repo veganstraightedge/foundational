@@ -1,6 +1,6 @@
 <div class='container'>
-  <%= tag.div class: wrapper_row_classes do %>
-    <%= tag.div class: wrapper_columns_classes do %>
+  <div class='row'>
+    <div class='col-12 col-md-8 offset-md-2'>
 
       <% if notice.present? %>
         <div class='alert alert-info mb-5'>
@@ -18,6 +18,6 @@
         </div>
       <% end %>
 
-    <% end %>
-  <% end %>
+    </div>
+  </div>
 </div><!-- .container -->
