@@ -79,3 +79,5 @@ end
 
 # windows development
 gem 'tzinfo-data', platforms: %i[windows jruby]
+
+gem "bcrypt", "~> 3.1"

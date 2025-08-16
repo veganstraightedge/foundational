@@ -1,4 +1,6 @@
 class TagsController < ApplicationController
+  allow_unauthenticated_access
+
   def index
     @tags       = Tag.all
     @page_title = %w[Tags]

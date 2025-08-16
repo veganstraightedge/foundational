@@ -95,6 +95,7 @@ GEM
     aws-sigv4 (1.12.1)
       aws-eventstream (~> 1, >= 1.0.2)
     base64 (0.3.0)
+    bcrypt (3.1.20)
     benchmark (0.4.1)
     better_html (2.1.1)
       actionview (>= 6.0)
@@ -430,6 +431,7 @@ PLATFORMS
 
 DEPENDENCIES
   aws-sdk-s3
+  bcrypt (~> 3.1)
   bootsnap
   bootstrap-icons-helper
   brakeman

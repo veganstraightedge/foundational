@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resource :session
+  resources :registrations, only: %i[new create]
+  resources :passwords, param: :token, only: %i[new create edit update]
   # homepage
   root to: 'home#index'
 
