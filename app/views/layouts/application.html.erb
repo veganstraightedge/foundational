@@ -18,9 +18,10 @@
       <link rel='manifest' href='<%= pwa_manifest_path format: :json %>'>
     <% end %>
 
-    <link rel='icon'             href='/icon.png' type='image/png'>
-    <link rel='icon'             href='/icon.svg' type='image/svg+xml'>
-    <link rel='apple-touch-icon' href='/icon.png'>
+    <%= favicon_link_tag 'icon.png' %>
+    <%= favicon_link_tag 'icon.svg' %>
+    <%= favicon_link_tag 'icon.ico' %>
+    <%= favicon_link_tag 'icon.png', rel: 'apple-touch-icon', type: 'image/png' %>
 
     <% if Rails.env.development? %>
       <%# Highlight any text which doesn’t have a translation in locales YAML %>
